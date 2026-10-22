@@ -36,6 +36,11 @@ p { margin: 0; }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
 .sw { width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--rule); display: inline-block; }
 .tablebox { overflow-x: auto; border: 1px solid var(--rule); border-radius: 6px; background: var(--panel); }
+.tablebox:has(> table) { overflow: auto; max-height: 80vh; }
+/* capul de tabel rămâne vizibil la derulare, în orice cutie de tabel (autorul, v588: „fă capul de tabel frozen la
+   scroll, peste tot unde se face scroll”); pe thead, ca un cap pe două rânduri să nu se suprapună */
+.tablebox thead { position: sticky; top: 0; z-index: 2; }
+.tablebox thead th { background: var(--panel); }
 table { border-collapse: separate; border-spacing: 0; width: 100%; }
 .matrix { min-width: 1180px; font-size: 13px; }
 .matrix th, .matrix td { border-bottom: 1px solid var(--rule); padding: 6px 8px; vertical-align: top; text-align: left; }
