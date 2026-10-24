@@ -357,11 +357,13 @@ nu se potrivesc, un al treilea model citește ambele codări și textul și
 decide valoarea.</p>
 <p>„Noi” suntem, în nota de față, autorul cercetării și Claude, modelul
 de limbaj cu care a construit procedura. Începem cu designul cercetării:
-întrebările și metoda, pe scurt. Urmează două părți. În prima căutăm în
+întrebările și metoda, pe scurt. Urmează trei părți. În prima căutăm în
 literatura de metodă procedura care seamănă cel mai mult cu a noastră,
 adică tipul ideal față de care se pot spune abaterile. În a doua spunem
 ce am schimbat ca lucrul să meargă — în construcția corpusului, la
 codare, în codebook, la măsurarea acordului și la arbitraj — și de ce.
+Primele două părți descriu proba făcută pentru conferință. În a treia
+descriem metoda pentru publicare, cu lucrările în care o ancorăm.
 Fiecare decizie e consemnată, cu data ei, în jurnalul proiectului; aici
 dăm sinteza.</p>
 <h3 id="research-design">Research design</h3>
@@ -2400,6 +2402,195 @@ sunt departajatorul lui Lombard și supervizorul lui Kuckartz și Rădiker;
 adaptarea constă în cele patru diferențe de mai sus. Nu l-am verificat
 pe valori cunoscute ca fiind corecte, cum recomandă Kim și colaboratorii
 pentru un model care judecă alte modele.</p>
+<h3 id="partea-a-treia.-metoda-pentru-publicare">Partea a treia. Metoda
+pentru publicare</h3>
+<p>Tot ce am descris până aici e o probă, făcută pentru conferință.
+Pentru publicare, metoda are patru pași: un codebook calibrat, aplicarea
+lui de agenți LLM în redundanță, extragerea automatizată și arbitrajul
+uman al dezacordurilor. Față de probă, se schimbă un singur pas,
+ultimul: dezacordurile dintre codori le decide un om, nu un model. Mai
+jos luăm pașii pe rând. La fiecare spunem cum îl facem și în ce lucrări
+îl ancorăm, iar unde nicio lucrare citită nu-l acoperă, spunem asta. La
+sfârșit spunem ce se declară despre folosirea AI.</p>
+<p><strong>1. Codebook-ul calibrat.</strong> Cercetătorul scrie
+codebook-ul înainte ca modelele să ruleze: pentru fiecare cod, definiția
+operațională, când se codează, exemple și delimitarea față de celelalte
+coduri <span class="citation"
+data-cites="KuckartzRädiker2023">[@KuckartzRädiker2023, 43]</span>.
+Codebook-ul se încearcă apoi pe un pilot: modelele îl aplică,
+cercetătorul citește ieșirile una câte una și revizuiește codebook-ul
+după ce vede unde greșesc. Halterman și Keith descriu aceeași buclă, în
+care rezultatele de mai târziu duc la revizia codebook-ului <span
+class="citation"
+data-cites="haltermanCodebookLLMsEvaluating2026">[-@haltermanCodebookLLMsEvaluating2026,
+190]</span>, iar Törnberg numește aceste runde „sesiuni de calibrare”
+<span class="citation"
+data-cites="tornbergBestPracticesText2024">[-@tornbergBestPracticesText2024,
+72–73]</span>. Când pilotul nu mai schimbă nimic, codebook-ul se
+închide: instrucțiunile se copiază într-un dosar care nu se mai
+modifică, iar rularea pe corpus folosește numai copia. Törnberg cere
+același lucru pentru validare, care se face numai după ce instrucțiunile
+au fost finalizate <span class="citation"
+data-cites="tornbergBestPracticesText2024">[-@tornbergBestPracticesText2024,
+76]</span>. Și cele două lucrări noi din JASIST pornesc de la o
+definiție operațională scrisă înainte de codare <span class="citation"
+data-cites="wuScalingResearchAim2025 zhengCanSocialMedia2026">[@wuScalingResearchAim2025,
+1472; @zhengCanSocialMedia2026, 627]</span>, iar Wu și colaboratorii
+publică instrucțiunile date modelelor ca material suplimentar <span
+class="citation"
+data-cites="wuScalingResearchAim2025">[-@wuScalingResearchAim2025,
+1475]</span>. Niciuna nu descrie un pilot după care instrucțiunile se
+revizuiesc și apoi se închid; pasul acesta îl ancorăm în Törnberg și în
+Halterman și Keith.</p>
+<p><strong>2. Agenții LLM în redundanță.</strong> Două modele de la
+dezvoltatori diferiți codează, independent, fiecare text, pe același
+codebook închis. Redundanța are un motiv măsurat: modelele greșesc
+adesea la fel, mai ales cele de la același dezvoltator <span
+class="citation"
+data-cites="kimCorrelatedErrorsLarge2025">[@kimCorrelatedErrorsLarge2025,
+1]</span>, iar modele diferite omit lucruri diferite <span
+class="citation"
+data-cites="jansenDataExtractionGenerative2025">[@jansenDataExtractionGenerative2025,
+1294]</span>. Törnberg cere ca rezultatele să se poată reproduce cu mai
+multe modele <span class="citation"
+data-cites="tornbergBestPracticesText2024">[-@tornbergBestPracticesText2024,
+71]</span>. Zheng și colaboratorii folosesc trei modele, fiecare rulat
+de trei ori, și compară votul lor cu doi codori umani <span
+class="citation"
+data-cites="zhengCanSocialMedia2026">[-@zhengCanSocialMedia2026,
+630]</span>; Wu și colaboratorii compară votul majorității între modele
+diferite cu cel mai bun model singur <span class="citation"
+data-cites="wuScalingResearchAim2025">[-@wuScalingResearchAim2025,
+1480]</span>. Cele două lucrări dau rezultate opuse. La Wu și
+colaboratorii, votul a depășit cel mai bun model singur <span
+class="citation"
+data-cites="wuScalingResearchAim2025">[-@wuScalingResearchAim2025,
+1480]</span>. La Zheng și colaboratorii, votul celor trei modele n-a
+depășit cel mai bun model, iar autorii conchid că votul simplu nu
+îmbunătățește neapărat clasificarea <span class="citation"
+data-cites="zhengCanSocialMedia2026">[-@zhengCanSocialMedia2026,
+632]</span>. De aceea la noi redundanța nu decide prin vot: ea arată
+unde codorii nu se potrivesc, iar acolo decide un om (pasul 4). Ca
+rulările să rămână comparabile, ambele modele primesc aceleași
+instrucțiuni. Zambrano și colaboratorii au procedat la fel și au dat
+aceeași instrucțiune tuturor modelelor, tocmai ca să le poată compara
+<span class="citation"
+data-cites="zambranoDeidentifyingStudentPersonally2025">[-@zambranoDeidentifyingStudentPersonally2025,
+408]</span>, iar temperatura folosită au declarat-o <span
+class="citation"
+data-cites="zambranoDeidentifyingStudentPersonally2025">[-@zambranoDeidentifyingStudentPersonally2025,
+406]</span>.</p>
+<p><strong>3. Extragerea automatizată.</strong> Modelele nu dau o
+etichetă dintr-o listă, ci scot din actul normativ citatul exact, pragul
+și formula de punctaj, iar formula o scriu ca expresie care se poate
+calcula. Un script verifică citatele pe text, aduce formulele celor doi
+codori la aceeași notație și compară valorile, pe fiecare pereche text ×
+cod. Două lucrări sunt corespondenți apropiați. Schimmenti și
+colaboratorii pun trei modele, de la trei dezvoltatori, să extragă din
+texte despre patrimoniul cultural aceleași elemente, fiecare pas cu
+ieșirea într-o schemă JSON dată dinainte, și compară ce au extras cu o
+referință adnotată de oameni <span class="citation"
+data-cites="schimmentiKnowledgeGraphsGeneration2026">[-@schimmentiKnowledgeGraphsGeneration2026,
+sec. 5, 5.1, 5.3]</span>. Am citit preprintul trimis la revistă, singura
+versiune pe care am putut-o procura, deci trimitem la secțiunile lui, nu
+la pagini. Jansen et al. compară extracția de date făcută de modele cu
+cea umană și aduc valorile la aceeași formă înainte de comparare <span
+class="citation"
+data-cites="jansenDataExtractionGenerative2025">[-@jansenDataExtractionGenerative2025,
+1288]</span>. Cele două lucrări din JASIST clasifică, nu extrag <span
+class="citation"
+data-cites="wuScalingResearchAim2025 zhengCanSocialMedia2026">[@wuScalingResearchAim2025;
+@zhengCanSocialMedia2026]</span>, deci nu acoperă pasul acesta. Pentru
+extragerea formulelor ca expresii calculabile n-am găsit corespondent în
+nicio lucrare citită.</p>
+<p><strong>4. Arbitrajul uman.</strong> Unde cei doi codori nu se
+potrivesc, decide un om, pe textul actului, după ce vede ce a dat
+fiecare codor. Ancora principală e procedura „hibridă” a lui Heseltine
+și Clemm von Hohenberg: un model codează textele de cel puțin două ori,
+iar un expert reconciliază manual diferențele dintre rulări <span
+class="citation"
+data-cites="heseltineLargeLanguageModels2024">[-@heseltineLargeLanguageModels2024,
+3, 8]</span>. Zheng și colaboratorii recomandă același flux, în doi
+pași: modelele clasifică întâi, iar omul validează după <span
+class="citation"
+data-cites="zhengCanSocialMedia2026">[-@zhengCanSocialMedia2026,
+634]</span>, fiindcă modelele nu sunt încă de încredere ca instrumente
+de sine stătătoare <span class="citation"
+data-cites="zhengCanSocialMedia2026">[-@zhengCanSocialMedia2026,
+635]</span>. Schimmenti și colaboratorii ajung la aceeași concluzie
+pentru extragere: automatizarea completă e prematură <span
+class="citation"
+data-cites="schimmentiKnowledgeGraphsGeneration2026">[-@schimmentiKnowledgeGraphsGeneration2026,
+sec. 7.6]</span>. La ei, un om citește toate elementele pe care modelul
+le dă în plus față de referința umană și le reclasifică pe cele cu
+același sens <span class="citation"
+data-cites="schimmentiKnowledgeGraphsGeneration2026">[-@schimmentiKnowledgeGraphsGeneration2026,
+sec. 5.3]</span>. Jansen et al. recomandă ca, unde omul și modelul nu se
+potrivesc, să decidă un codor în plus <span class="citation"
+data-cites="jansenDataExtractionGenerative2025">[-@jansenDataExtractionGenerative2025,
+1295]</span>. În procedura clasică, omul care decide la dezacord e un
+cercetător sau un alt expert <span class="citation"
+data-cites="lombardContentAnalysisMass2002">[@lombardContentAnalysisMass2002,
+601]</span>, sau un supervizor numit dinainte <span class="citation"
+data-cites="KuckartzRädiker2023">[@KuckartzRädiker2023, 202]</span>. La
+noi, arbitrul e autorul, numit dinainte. Diferă de Heseltine și Clemm
+von Hohenberg un singur lucru: codorii sunt două modele diferite, nu
+același model rulat de două ori. Un risc îl spunem de la început:
+arbitrul vede explicațiile codorilor, iar Törnberg avertizează că
+explicațiile modelului pot convinge prea ușor <span class="citation"
+data-cites="tornbergBestPracticesText2024">[-@tornbergBestPracticesText2024,
+73]</span>. Al doilea risc privește perechile în acord. Arbitrul vede
+numai dezacordurile, deci o greșeală pe care ambii codori o fac la fel
+intră neverificată. Zambrano și colaboratorii numesc aceeași limită:
+deciziile greșite asupra cărora omul și modelul au căzut de acord n-au
+fost revizuite <span class="citation"
+data-cites="zambranoDeidentifyingStudentPersonally2025">[-@zambranoDeidentifyingStudentPersonally2025,
+417]</span>. Tot ei arată ce câștigă arbitrajul: citirea dezacordurilor
+dintre om și model a găsit și erori ale oamenilor <span class="citation"
+data-cites="zambranoDeidentifyingStudentPersonally2025">[-@zambranoDeidentifyingStudentPersonally2025,
+412]</span>. Acordul se raportează cel dinaintea arbitrajului, fiindcă
+cel de după nu se poate măsura <span class="citation"
+data-cites="Krippendor2004a">[@Krippendor2004a, 219]</span>, iar felul
+în care s-au rezolvat dezacordurile se raportează și el <span
+class="citation"
+data-cites="lombardContentAnalysisMass2002">[@lombardContentAnalysisMass2002,
+602]</span>.</p>
+<p><strong>Ce se declară despre folosirea AI.</strong> Emerald cere ca
+folosirea unui instrument AI să fie semnalată în secțiunile Methods și
+Acknowledgements, cu numele și versiunea instrumentului <span
+class="citation"
+data-cites="ibragimovaEditorialAITools2024">[@ibragimovaEditorialAITools2024,
+193]</span>. Ibragimova și Phagava recomandă ca Methods să descrie cum
+s-a folosit fiecare instrument, cu datele de dezvoltare și de validare
+și cu măsura performanței, iar Results să dea măsurătorile și
+comparațiile în detaliu suficient pentru reproducere <span
+class="citation"
+data-cites="ibragimovaEditorialAITools2024">[-@ibragimovaEditorialAITools2024,
+194]</span>. În Acknowledgements intră platforma, programul, versiunea,
+producătorul și data folosirii <span class="citation"
+data-cites="ibragimovaEditorialAITools2024">[-@ibragimovaEditorialAITools2024,
+198]</span>. Lista de raportare a lui Feuerriegel și colaboratorii cere,
+în plus, să se declare cât de automatizat e procesul și dacă ieșirile
+modelelor au fost validate de oameni <span class="citation"
+data-cites="feuerriegelReportingChecklistLarge2026">[@feuerriegelReportingChecklistLarge2026,
+1184]</span>.</p>
+<p>Politica Emerald cere însă o lămurire înainte de depunere, fiindcă se
+contrazice. Editorialul spune că raportarea în text a statisticilor
+produse cu un instrument generativ nu e permisă, deși folosirea lui ca
+ajutor în analiză este <span class="citation"
+data-cites="ibragimovaEditorialAITools2024">[@ibragimovaEditorialAITools2024,
+193]</span>. Pagina de etică a editurii, în forma de azi, repetă regula,
+cu precizarea că ajutorul în analiză trebuie declarat. Aceeași pagină
+spune însă că generarea, manipularea sau raportarea datelor și
+rezultatelor de cercetare cu un instrument generativ nu e permisă.
+Tabelul ei de folosiri marchează cu „NO” atât generarea datelor, cât și
+analiza sau descrierea rezultatelor prin instrucțiuni date unui model
+<span class="citation"
+data-cites="CHEIE_EMERALD_ETICA">[@CHEIE_EMERALD_ETICA]</span>. La noi,
+modelele scot din acte valorile pe care le analizăm, cele două codări se
+compară automat, iar dezacordurile le decide un om. Dacă asta e ajutor
+în analiză sau generare de date o hotărăște redacția revistei, iar
+întrebarea trebuie pusă înainte de depunere.</p>
 <h3 id="ce-n-am-rezolvat-încă">Ce n-am rezolvat încă</h3>
 <p>Arbitrajul dezacordurilor pe conținutul condițiilor și al
 conversiilor de la articolul ISI la alte publicații e amânat. Perechile
@@ -2850,8 +3041,10 @@ Index”</span>. <em>Social Science Information</em> 64 (2): 248-60. <a href="ht
   <div class="nota"><h2>Cărțile și bibliotecile în standardele românești de promovare</h2>
 
 <p><em>Schiță de lucru, cu rezultate preliminare. Schimmenti et al. 2026
-e citat fără pagini, fiindcă exemplarul citit e preprintul
-arXiv.</em></p>
+și Andreescu și Proteasa 2026 sunt citați fără pagini, fiindcă
+exemplarele citite sunt preprintul arXiv și corectura; Proteasa,
+Andreescu și Curaj 2017 e citat fără pagini, fiindcă exemplarul citit e
+versiunea online-first.</em></p>
 <h3 id="problema-și-întrebarea-de-cercetare">1. Problema și întrebarea
 de cercetare</h3>
 <p>Evaluarea cercetării s-a construit în mare parte în jurul articolelor
@@ -2936,9 +3129,49 @@ cererea pe care o anticipează, firma după criterii declarate amestecate
 cu considerente de piață.</p>
 <h3 id="ce-spune-literatura-românească-despre-cărți">3. Ce spune
 literatura românească despre cărți</h3>
-<p>Literatura românească despre evaluarea cercetării se ocupă de
-articole și de indexurile de citări. Cărțile apar în două feluri, și în
-niciunul ca obiect de studiu.</p>
+<p>Literatura românească despre evaluarea cercetării discută două feluri
+de instrumente. Primul e articolul ISI ca criteriu. De când a intrat, în
+2005, în standardele naționale pentru titlurile academice, „this single
+criterion has been perceived as a make-or-break component of the
+academic career in Romania” <span class="citation" data-cites="andreescuReflexiveUniversityBoundary2026">(Andreescu și
+Proteasa 2026)</span>, iar apoi a fost „extended to policies such as
+university funding allocations, quality assurance, accreditation, or
+competitive national research financing” <span class="citation" data-cites="andreescuReflexiveUniversityBoundary2026">(Andreescu și
+Proteasa 2026)</span>. Criteriile de bază ale ministerului numără
+articolele ISI, nu factorul de impact sau indicele h <span class="citation" data-cites="andonieHowWriteGood2010">(Andonie și Dziţac
+2010, 444)</span>. La medicină, Rebeleanu și Mocanu descriu un prag de
+articole ISI împreună cu un indice Hirsch <span class="citation" data-cites="rebeleanuInfluenceAcademicPromotion2020">(Rebeleanu și
+Mocanu 2019, 129)</span> și mai multe citări între autorii români după
+ce indicele Hirsch a intrat în criterii <span class="citation" data-cites="rebeleanuInfluenceAcademicPromotion2020">(Rebeleanu și
+Mocanu 2019, 131)</span>.</p>
+<p>Al doilea fel, și partea cea mai mare a literaturii, e agregarea:
+formule de finanțare, clasificări și clasamente construite din
+indicatori compuși. Între 2003 și 2011, o parte din finanțarea de bază a
+universităților era „determined by the relative performance of the
+universities on certain quality indicators” <span class="citation" data-cites="Vîiu2015a">(Vîiu 2015, 31)</span>, ceea ce le ierarhiza de
+fapt <span class="citation" data-cites="Vîiu2015a">(Vîiu 2015,
+32)</span>. Clasificarea universităților și ierarhizarea programelor din
+2011 au fost „among the most disputed recent additions to higher
+education reform” <span class="citation" data-cites="AndreescuGheorghiuEtAl2015a">(Andreescu et al. 2015,
+36)</span>; indicatorul lor de cercetare aduna scorul de influență al
+articolelor din Web of Knowledge și cărțile publicate la edituri
+internaționale <span class="citation" data-cites="AndreescuGheorghiuEtAl2015a">(Andreescu et al. 2015,
+47-48)</span>. În acea metodologie, factorul de impact al revistelor
+avea ponderea cea mai mare <span class="citation" data-cites="MiroiuPăunescuEtAl2015a">(Miroiu et al. 2015, 195)</span>,
+iar producția științifică era măsurată „especially in terms of Thomson
+ISI-indexed publications and impact factors” <span class="citation" data-cites="ProteasaAndreescuEtAl2017">(Proteasa et al. 2017)</span>.
+Clasamentele alternative ale departamentelor folosesc în locul lor
+indicele g <span class="citation" data-cites="PăunescuHâncean2013a MiroiuPăunescuEtAl2015a">(Păunescu și
+Hâncean 2013, 8; Miroiu et al. 2015, 195)</span>. Metodologiile de
+finanțare de după agregă indicii h individuali <span class="citation" data-cites="ProteasaMiroiu2015b">(Proteasa et al. 2015, 90)</span>, cu
+ISI ca una dintre trei baze de date <span class="citation" data-cites="ProteasaMiroiu2015b">(Proteasa et al. 2015, 92)</span>.
+Indicii compuși ai performanței individuale <span class="citation" data-cites="horodnicAcademicPerformanceMeasurement2014">(Horodnic 2014,
+12)</span>, metarankingurile universităților <span class="citation" data-cites="david2017UniversityMetaranking2018">(David et al. 2018,
+39)</span> și studiile despre formulele de finanțare pe bază de
+performanță <span class="citation" data-cites="spanacheStudiuExtinsCu2025">(Spanache et al. 2025, 3,
+105)</span> țin de aceeași direcție.</p>
+<p>Cărțile apar în această literatură în două feluri, și în niciunul ca
+obiect de studiu.</p>
 <ol type="1">
 <li><strong>Ca rezultate numărate.</strong> Clasificarea și ierarhizarea
 programelor de studii din 2011 cuprindeau „the number of books and book
@@ -2988,15 +3221,21 @@ poate calcula. Codebook-ul l-a scris un om înaintea rulărilor și l-a
 revizuit după ele <span class="citation" data-cites="haltermanCodebookLLMsEvaluating2026">(Halterman și Keith
 2026, 189, 192, 190)</span>; modelele răspund într-o schemă fixă, ca în
 extragerile cu LLM care scriu ieșirea într-o schemă dată <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
-2026)</span>.</li>
+2026)</span>. Ca în două studii recente din JASIST, definițiile
+operaționale se scriu înainte de codare <span class="citation" data-cites="wuScalingResearchAim2025 zhengCanSocialMedia2026">(Wu et al.
+2025, 1472; Zheng et al. 2026, 627)</span>.</li>
 <li><strong>Doi codori.</strong> Două modele de la dezvoltatori diferiți
 codează fiecare text separat, pe același codebook: Claude Sonnet, prin
 agenți, și Qwen 3.6 Plus. Modelele de limbaj fac des aceleași erori, mai
 ales cele de la același dezvoltator <span class="citation" data-cites="kimCorrelatedErrorsLarge2025">(Kim et al. 2025)</span>, iar
 modele diferite se descurcă mai bine la sarcini diferite <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
-2026)</span>. Instrucțiunile se îngheață înaintea fiecărei rulări și
-sunt aceleași pentru ambii codori, cum Zambrano et al. folosesc același
-prompt pentru toate modelele pe care le compară <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
+2026)</span>. Redundanța nu decide prin votul majorității: votul între
+modele a depășit cel mai bun model singur într-un studiu recent <span class="citation" data-cites="wuScalingResearchAim2025">(Wu et al. 2025,
+1480)</span> și nu l-a depășit în altul <span class="citation" data-cites="zhengCanSocialMedia2026">(Zheng et al. 2026, 632)</span>. Ea
+arată unde codorii nu se potrivesc. Instrucțiunile se îngheață înaintea
+fiecărei rulări și sunt aceleași pentru ambii codori, cum Zambrano et
+al. folosesc același prompt pentru toate modelele pe care le compară
+<span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
 2025, 408)</span>; modelul, versiunea și parametrii sunt fixați și
 declarați <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
 2025, 406)</span>.</li>
@@ -3023,20 +3262,33 @@ folosesc față de un etalon uman <span class="citation" data-cites="zambranoDei
 <li><strong>Arbitrajul.</strong> Autorul arbitrează dezacordurile dintre
 codori. Corespondentul e cercetătorul sau expertul care tranșează între
 doi codori <span class="citation" data-cites="lombardContentAnalysisMass2002">(Lombard et al. 2002,
-601)</span> sau care hotărăște unde două rulări ale unui model diferă
-<span class="citation" data-cites="heseltineLargeLanguageModels2024">(Heseltine și Clemm von
-Hohenberg 2024, 3)</span>. În extragerea cu LLM, un om citește fiecare
+601)</span> iar, cu modele de limbaj, procedura hibridă în care un
+expert reconciliază diferențele dintre două rulări ale unui model <span class="citation" data-cites="heseltineLargeLanguageModels2024">(Heseltine și Clemm von
+Hohenberg 2024, 3, 8)</span>. Zheng et al. recomandă aceiași doi pași:
+modelele clasifică întâi, iar oamenii validează după <span class="citation" data-cites="zhengCanSocialMedia2026">(Zheng et al.
+2026, 634)</span>. În extragerea cu LLM, un om citește fiecare
 nepotrivire <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
 2026)</span>, iar automatizarea completă e socotită prematură <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
 2026)</span>. Valorile asupra cărora cei doi codori cad de acord nu se
 revizuiesc, deci erorile comune rămân <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
-2025, 417)</span>.</li>
+2025, 417)</span>. Arbitrul vede ce a dat fiecare codor, iar
+explicațiile unui model pot convinge prea ușor <span class="citation" data-cites="tornbergBestPracticesText2024">(Törnberg 2024, 73)</span>.
+Felul în care s-au rezolvat dezacordurile se raportează <span class="citation" data-cites="lombardContentAnalysisMass2002">(Lombard et
+al. 2002, 602)</span>.</li>
 <li><strong>Cine ce face.</strong> Modelele extrag citatele și scriu
 formulele; scripturile calculează mărimile după extragere; autorul
 validează, arbitrează și interpretează. Koroleva și Jogezai împart
 analiza la fel, cu modelul la unii pași și cercetătorii la ceilalți
 <span class="citation" data-cites="korolevaGenerativeArtificialIntelligence2024">(Koroleva și
-Jogezai 2024, 10)</span>, și declară folosirea modelului <span class="citation" data-cites="korolevaGenerativeArtificialIntelligence2024">(Koroleva și
+Jogezai 2024, 10)</span>.</li>
+<li><strong>Declararea folosirii AI.</strong> Emerald cere ca folosirea
+unui instrument AI să fie semnalată în Methods și în Acknowledgements,
+cu numele și versiunea instrumentului <span class="citation" data-cites="ibragimovaEditorialAITools2024">(Ibragimova și Phagava 2024,
+193)</span>, iar Methods să descrie cum s-a folosit fiecare instrument,
+cu validarea și performanța lui <span class="citation" data-cites="ibragimovaEditorialAITools2024">(Ibragimova și Phagava 2024,
+194)</span>. Lista de raportare a lui Feuerriegel et al. adaugă gradul
+de automatizare și dacă ieșirile au fost validate de oameni <span class="citation" data-cites="feuerriegelReportingChecklistLarge2026">(<span class="nocase">Feuerriegel et al.</span> 2026, 1184)</span>. Koroleva și
+Jogezai dau un exemplu de astfel de declarație <span class="citation" data-cites="korolevaGenerativeArtificialIntelligence2024">(Koroleva și
 Jogezai 2024, 19)</span>.</li>
 <li><strong>Pentru această schiță.</strong> Codarea e completată de o
 inventariere pe cuvinte cheie a pasajelor despre cărți. Cifrele
@@ -3135,6 +3387,26 @@ evaluare, inclusiv a surselor încă neprocurate.</li>
 românești își raportează colecțiile în WorldCat și KVK.</li>
 </ul>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-andonieHowWriteGood2010" class="csl-entry" role="listitem">
+Andonie, Răzvan, și Ioan Dziţac. 2010. <span>„How to Write a Good Paper
+in Computer Science and How Will It Be Measured by ISI Web of
+Knowledge”</span>. <em>International Journal of Computers,
+Communications &amp; Control</em> 5 (4): 432-46. <a href="https://doi.org/10.15837/ijccc.2010.4.2493">https://doi.org/10.15837/ijccc.2010.4.2493</a>.
+</div>
+<div id="ref-AndreescuGheorghiuEtAl2015a" class="csl-entry" role="listitem">
+Andreescu, Liviu, Radu Gheorghiu, Alina Irimia, și Adrian Curaj. 2015.
+<span>„Mergers and Classifications in Romania: Opportunities and
+Obstacles”</span>. În <em>Mergers and Alliances in Higher Education.
+International Practice and Emerging Opportunities</em>, ediție de Adrian
+Curaj, Luke Georghiou, Jennifer Cassingena Harper, și Eva Egron-Polak.
+Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-13135-1_3">https://doi.org/10.1007/978-3-319-13135-1_3</a>.
+</div>
+<div id="ref-andreescuReflexiveUniversityBoundary2026" class="csl-entry" role="listitem">
+Andreescu, Liviu, și Viorel Proteasa. 2026. <span>„The Reflexive
+University, Boundary Objects, and Academic Research Production”</span>.
+În <em>Reflexivity in Higher Education</em>, ediție de L. Matei și R.
+Iucu. Knowledge Studies in Higher Education 16. Springer. <a href="https://doi.org/10.1007/978-3-032-31296-9_18">https://doi.org/10.1007/978-3-032-31296-9_18</a>.
+</div>
 <div id="ref-Cernat2024" class="csl-entry" role="listitem">
 Cernat, Vasile. 2024. <span>„The Unprincipled Principal: How Romania’s
 Inconsistent Research Reform Impacted Scientific Output”</span>.
@@ -3151,6 +3423,12 @@ Dagienė, Eleonora. 2023. <span>„Prestige of scholarly book publishers—An
 investigation into criteria, processes, and practices across
 countries”</span>. <em>Research Evaluation</em> 32 (2): 356-70. <a href="https://doi.org/10.1093/reseval/rvac044">https://doi.org/10.1093/reseval/rvac044</a>.
 </div>
+<div id="ref-david2017UniversityMetaranking2018" class="csl-entry" role="listitem">
+David, Daniel, Ovidiu Andronesi, Carmen Buzea, Bogdan Florian, Silviu
+Matu, și Lazăr Vlăsceanu. 2018. <span>„The 2017 University Metaranking.
+Romanian University Ranking”</span>. <em>Journal of Research in Higher
+Education</em> 1 (2): 31-50. <a href="https://doi.org/10.24193/jrhe.2017.2.2">https://doi.org/10.24193/jrhe.2017.2.2</a>.
+</div>
 <div id="ref-decuir-gunbyDevelopingUsingCodebook2011" class="csl-entry" role="listitem">
 DeCuir-Gunby, Jessica T., Patricia L. Marshall, și Allison W. McCulloch.
 2011. <span>„Developing and Using a Codebook for the Analysis of
@@ -3161,6 +3439,12 @@ Project”</span>. <em>Field Methods</em> 23 (2): 136-55. <a href="https://doi.o
 Elo, Satu, și Helvi Kyngäs. 2008. <span>„The Qualitative Content
 Analysis Process”</span>. <em>Journal of Advanced Nursing</em> 62 (1):
 107-15. <a href="https://doi.org/10.1111/j.1365-2648.2007.04569.x">https://doi.org/10.1111/j.1365-2648.2007.04569.x</a>.
+</div>
+<div id="ref-feuerriegelReportingChecklistLarge2026" class="csl-entry" role="listitem">
+<span class="nocase">Feuerriegel, Stefan, Christopher Barrie, Molly J.
+Crockett, et al.</span> 2026. <span>„A Reporting Checklist for Large
+Language Models in Behavioural Science”</span>. <em>Nature Human
+Behaviour</em> 10 (7): 1182-86. <a href="https://doi.org/10.1038/s41562-026-02492-7">https://doi.org/10.1038/s41562-026-02492-7</a>.
 </div>
 <div id="ref-haltermanCodebookLLMsEvaluating2026" class="csl-entry" role="listitem">
 Halterman, Andrew, și Katherine A. Keith. 2026. <span>„Codebook LLMs:
@@ -3173,10 +3457,21 @@ Language Models as a Substitute for Human Experts in Annotating
 Political Text”</span>. <em>Research &amp; Politics</em> 11 (1): 1-10.
 <a href="https://doi.org/10.1177/20531680241236239">https://doi.org/10.1177/20531680241236239</a>.
 </div>
+<div id="ref-horodnicAcademicPerformanceMeasurement2014" class="csl-entry" role="listitem">
+Horodnic, Ioana Alexandra. 2014. <span>„Academic Performance:
+Measurement Methods Used in Socio-Economic Sciences”</span>. <em>The
+Yearbook of the „Gh. Zane” Institute of Economic Research</em> 23 (1):
+5-17.
+</div>
 <div id="ref-HsiehShannon2005" class="csl-entry" role="listitem">
 Hsieh, Hsiu-Fang, și Sarah E. Shannon. 2005. <span>„Three Approaches to
 Qualitative Content Analysis”</span>. <em>Qualitative Health
 Research</em> 15 (9): 1277-88. <a href="https://doi.org/10.1177/1049732305276687">https://doi.org/10.1177/1049732305276687</a>.
+</div>
+<div id="ref-ibragimovaEditorialAITools2024" class="csl-entry" role="listitem">
+Ibragimova, Irina, și Helen Phagava. 2024. <span>„Editorial: AI tools
+usage in Emerald journal articles”</span>. <em>International Journal of
+Health Governance</em> 29 (3): 193-99. <a href="https://doi.org/10.1108/IJHG-09-2024-163">https://doi.org/10.1108/IJHG-09-2024-163</a>.
 </div>
 <div id="ref-jansenDataExtractionGenerative2025" class="csl-entry" role="listitem">
 Jansen, Thorben, Lucas W. Liebenow, Ute Mertens, et al. 2025.
@@ -3223,6 +3518,37 @@ Mills, David. 2025. <span>„One index, two publishers and the global
 research economy”</span>. <em>Oxford Review of Education</em> 51 (4):
 545-60. <a href="https://doi.org/10.1080/03054985.2024.2348448">https://doi.org/10.1080/03054985.2024.2348448</a>.
 </div>
+<div id="ref-MiroiuPăunescuEtAl2015a" class="csl-entry" role="listitem">
+Miroiu, Adrian, Mihai Păunescu, și Gabriel-Alexandru Vîiu. 2015.
+<span>„Ranking Romanian Academic Departments in Three Fields of Study
+Using the g -Index”</span>. <em>Quality in Higher Education</em> 8322
+(December): 1-24. <a href="https://doi.org/10.1080/13538322.2015.1051794">https://doi.org/10.1080/13538322.2015.1051794</a>.
+</div>
+<div id="ref-PăunescuHâncean2013a" class="csl-entry" role="listitem">
+Păunescu, Mihai, și Gabriel-Marian Hâncean. 2013. <span>„Ranking the
+Romanian Departments of Sociology. Comparative Results of Different
+Evaluation Methodologies”</span>. <em>Quality Assurance Review for
+Higher Education</em> 5 (1-2): 5-17.
+</div>
+<div id="ref-ProteasaAndreescuEtAl2017" class="csl-entry" role="listitem">
+Proteasa, Viorel, Liviu Andreescu, și Adrian Curaj. 2017.
+<span>„Differentiation and Academic Control over Policy in Central and
+Eastern Europe: The Case of Romania”</span>. <em>European Educational
+Research Journal</em> 16 (5): 605-25. <a href="https://doi.org/10.1177/1474904117703227">https://doi.org/10.1177/1474904117703227</a>.
+</div>
+<div id="ref-ProteasaMiroiu2015b" class="csl-entry" role="listitem">
+Proteasa, Viorel, Mihai Păunescu, și Adrian Miroiu. 2015. <span>„The
+<span>«Black-Box»</span> of Institutional Scores: Analyzing the
+Distribution of the Values of the H and G Indexes in Medicine Schools in
+Romania”</span>. <em>Journal of Social Research &amp; Policy</em> 6 (1):
+89-104.
+</div>
+<div id="ref-rebeleanuInfluenceAcademicPromotion2020" class="csl-entry" role="listitem">
+Rebeleanu, Codrin Horea, și Lăcrămioara Mocanu. 2019. <span>„The
+Influence of Academic Promotion Systems on the Bibliography of the
+Scientific Articles Published in Romanian Medical Journals”</span>.
+<em>New Trends in Psychology</em> 1 (1): 128-32. <a href="https://openalex.org/W7215317536">https://openalex.org/W7215317536</a>.
+</div>
 <div id="ref-Saldaña2013" class="csl-entry" role="listitem">
 Saldaña, Johnny. 2013. <em>The Coding Manual for Qualitative
 Researchers</em>. 2. ed. SAGE Publ.
@@ -3233,6 +3559,14 @@ Schimmenti, Andrea, Valentina Pasqual, Fabio Vitali, și Marieke van Erp.
 combining LLMs and ontological engineering for scholarly
 debates”</span>. <em>Journal of Documentation</em> 82 (7): 206-50. <a href="https://doi.org/10.1108/JD-07-2025-0203">https://doi.org/10.1108/JD-07-2025-0203</a>.
 </div>
+<div id="ref-spanacheStudiuExtinsCu2025" class="csl-entry" role="listitem">
+Spanache, Ioana, Ioana Trif, Mariana Chioncel, Mihaela Iorgulescu
+Aioanei, și Adrian Curaj. 2025. <em>Studiu extins cu bune practici
+internaționale privind finanțarea pe bază de performanță în instituțiile
+de învățământ superior</em>. Versiunea 1. UEFISCDI – Unitatea Executivă
+pentru Finanțarea Învățământului Superior, a Cercetării, Dezvoltării și
+Inovării. <a href="https://doi.org/10.5281/zenodo.17625033">https://doi.org/10.5281/zenodo.17625033</a>.
+</div>
 <div id="ref-tornbergBestPracticesText2024" class="csl-entry" role="listitem">
 Törnberg, Petter. 2024. <span>„Best Practices for Text Annotation with
 Large Language Models”</span>. <em>Sociologica</em> 18 (2): 67-85. <a href="https://doi.org/10.6092/issn.1971-8853/19461">https://doi.org/10.6092/issn.1971-8853/19461</a>.
@@ -3241,6 +3575,12 @@ Large Language Models”</span>. <em>Sociologica</em> 18 (2): 67-85. <a href="ht
 Vanderstraeten, Raf. 2025. <span>„Quo vadis Web of Science? The
 expansion and selection criteria of the Social Science Citation
 Index”</span>. <em>Social Science Information</em> 64 (2): 248-60. <a href="https://doi.org/10.1177/05390184251349017">https://doi.org/10.1177/05390184251349017</a>.
+</div>
+<div id="ref-Vîiu2015a" class="csl-entry" role="listitem">
+Vîiu, Gabriel-Alexandru. 2015. <span>„Quality-related funding in
+Romanian higher education throughout 2003 – 2011: a global
+assessment”</span>. <em>Romanian Journal of Society and Politics</em> 10
+(2): 26-59.
 </div>
 <div id="ref-VîiuMiroiu2013a" class="csl-entry" role="listitem">
 Vîiu, Gabriel-Alexandru, și Adrian Miroiu. 2013. <span>„Evaluarea
@@ -3260,6 +3600,13 @@ worldcat, cultural impact, and fame”</span>. <em>Journal of the
 Association for Information Science and Technology</em> 69 (12):
 1502-12. <a href="https://doi.org/10.1002/asi.24064">https://doi.org/10.1002/asi.24064</a>.
 </div>
+<div id="ref-wuScalingResearchAim2025" class="csl-entry" role="listitem">
+Wu, Mengjia, Gunnar Sivertsen, Lin Zhang, Fan Qi, și Yi Zhang. 2025.
+<span>„Scaling research aim identification: Language models for
+classifying scientific and societal-oriented studies”</span>.
+<em>Journal of the Association for Information Science and
+Technology</em> 76 (11): 1470-87. <a href="https://doi.org/10.1002/asi.70004">https://doi.org/10.1002/asi.70004</a>.
+</div>
 <div id="ref-zambranoDeidentifyingStudentPersonally2025" class="csl-entry" role="listitem">
 Zambrano, Andres Felipe, Shreya Singhal, Maciej Pankiewicz, Ryan Shaun
 Baker, Chelsea Porter, și Xiner Liu. 2025. <span>„De-identifying student
@@ -3272,6 +3619,13 @@ Zamfir, Cătălin. 2007. <span>„Sociologia societăților în
 schimbare/sociologia României. Propuneri de noi criterii de evaluare a
 producției sociologice”</span>. <em>Sociologie Românească</em> 5 (2):
 3-6. <a href="https://openalex.org/W7217240281">https://openalex.org/W7217240281</a>.
+</div>
+<div id="ref-zhengCanSocialMedia2026" class="csl-entry" role="listitem">
+Zheng, Er-Te, Hui-Zhen Fu, Mike Thelwall, și Zhichao Fang. 2026.
+<span>„Can social media provide early warning of retraction? Evidence
+from critical tweets identified by human annotation and large language
+models”</span>. <em>Journal of the Association for Information Science
+and Technology</em> 77 (4): 624-39. <a href="https://doi.org/10.1002/asi.70028">https://doi.org/10.1002/asi.70028</a>.
 </div>
 <div id="ref-bodCanWeRank2015" class="csl-entry" role="listitem">
 Zuccala, Alesia, Raf Guns, Roberto Cornacchia, și Rens Bod. 2015.
@@ -6019,8 +6373,10 @@ Index.”</span> <em>Social Science Information</em> 64 (2): 248–60. <a href="
   <div class="nota"><h2>Books and libraries in Romanian promotion standards</h2>
 
 <p><em>Working outline with preliminary results. Schimmenti et al. 2026
-is cited without page numbers, because the copy read is the arXiv
-preprint.</em></p>
+and Andreescu and Proteasa 2026 are cited without page numbers, because
+the copies read are the arXiv preprint and the page proofs; Proteasa,
+Andreescu and Curaj 2017 is cited without page numbers, because the copy
+read is the online-first version.</em></p>
 <h3 id="problem-and-research-question-en">1. Problem and research
 question</h3>
 <p>Research evaluation has largely been built around journal articles
@@ -6104,9 +6460,47 @@ library by anticipated demand, the firm by declared criteria mixed with
 market considerations.</p>
 <h3 id="what-the-romanian-literature-says-about-books-en">3. What the
 Romanian literature says about books</h3>
-<p>The Romanian literature on research evaluation concentrates on
-articles and citation indexes. Books appear in two ways, neither of them
-as an object of study.</p>
+<p>The Romanian literature on research evaluation discusses two kinds of
+instrument. The first is the ISI article as a criterion. Since it
+entered the national standards for academic titles in 2005, “this single
+criterion has been perceived as a make-or-break component of the
+academic career in Romania” <span class="citation" data-cites="andreescuReflexiveUniversityBoundary2026">(Andreescu and
+Proteasa 2026)</span>, and it was later “extended to policies such as
+university funding allocations, quality assurance, accreditation, or
+competitive national research financing” <span class="citation" data-cites="andreescuReflexiveUniversityBoundary2026">(Andreescu and
+Proteasa 2026)</span>. The ministry’s basic criteria count ISI papers,
+not the impact factor or the h-index <span class="citation" data-cites="andonieHowWriteGood2010">(Andonie and Dziţac 2010,
+444)</span>. For medicine, Rebeleanu and Mocanu report a threshold of
+ISI articles together with a Hirsch index <span class="citation" data-cites="rebeleanuInfluenceAcademicPromotion2020">(Rebeleanu and
+Mocanu 2019, 129)</span>, and more citations among Romanian authors
+after the Hirsch index entered the criteria <span class="citation" data-cites="rebeleanuInfluenceAcademicPromotion2020">(Rebeleanu and
+Mocanu 2019, 131)</span>.</p>
+<p>The second kind, and the larger part of the literature, is
+aggregation: funding formulas, classifications and rankings built from
+composite indicators. From 2003 to 2011, part of the universities’ basic
+funding was “determined by the relative performance of the universities
+on certain quality indicators” <span class="citation" data-cites="Vîiu2015a">(Vîiu 2015, 31)</span>, which in effect ranked
+them <span class="citation" data-cites="Vîiu2015a">(Vîiu 2015,
+32)</span>. The 2011 classification of universities and ranking of
+programmes were “among the most disputed recent additions to higher
+education reform” <span class="citation" data-cites="AndreescuGheorghiuEtAl2015a">(Andreescu et al. 2015,
+36)</span>; their research indicator summed the article influence score
+of the Web of Knowledge articles and the books published with
+international publishers <span class="citation" data-cites="AndreescuGheorghiuEtAl2015a">(Andreescu et al. 2015,
+47–48)</span>. In that methodology, the journals’ impact factor had the
+heaviest weight <span class="citation" data-cites="MiroiuPăunescuEtAl2015a">(Miroiu et al. 2015, 195)</span>,
+and scientific output was measured “especially in terms of Thomson
+ISI-indexed publications and impact factors” <span class="citation" data-cites="ProteasaAndreescuEtAl2017">(Proteasa et al. 2017)</span>.
+Alternative rankings of departments use the g-index instead <span class="citation" data-cites="PăunescuHâncean2013a MiroiuPăunescuEtAl2015a">(Păunescu and
+Hâncean 2013, 8; Miroiu et al. 2015, 195)</span>. Later funding
+methodologies aggregate individual h-indices <span class="citation" data-cites="ProteasaMiroiu2015b">(Proteasa et al. 2015, 90)</span>, with
+ISI as one of three databases <span class="citation" data-cites="ProteasaMiroiu2015b">(Proteasa et al. 2015, 92)</span>.
+Composite indexes of individual performance <span class="citation" data-cites="horodnicAcademicPerformanceMeasurement2014">(Horodnic 2014,
+12)</span>, metarankings of universities <span class="citation" data-cites="david2017UniversityMetaranking2018">(David et al. 2018,
+39)</span> and studies of performance-based funding formulas <span class="citation" data-cites="spanacheStudiuExtinsCu2025">(Spanache et
+al. 2025, 3, 105)</span> belong to the same strand.</p>
+<p>Books appear in this literature in two ways, neither of them as an
+object of study.</p>
 <ol type="1">
 <li><strong>As counted outputs.</strong> The 2011 classification and
 ranking of study programmes included “the number of books and book
@@ -6152,15 +6546,20 @@ computable expression. The codebook was written by a human before the
 runs and revised after them <span class="citation" data-cites="haltermanCodebookLLMsEvaluating2026">(Halterman and Keith
 2026, 189, 192, 190)</span>; the models answer in a fixed schema, as in
 LLM extraction pipelines that produce output in a given schema <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
-2026)</span>.</li>
+2026)</span>. As in two recent JASIST studies, the operational
+definitions are written before coding <span class="citation" data-cites="wuScalingResearchAim2025 zhengCanSocialMedia2026">(Wu et al.
+2025, 1472; Zheng et al. 2026, 627)</span>.</li>
 <li><strong>Two coders.</strong> Two models from different developers
 code each text separately, on the same codebook: Claude Sonnet, through
 agents, and Qwen 3.6 Plus. Language models often make the same errors,
 more so models from the same developer <span class="citation" data-cites="kimCorrelatedErrorsLarge2025">(Kim et al. 2025)</span>, and
 different models do better on different subtasks <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
-2026)</span>. The instructions are frozen before each run and are the
-same for both coders, as Zambrano et al. use the same prompt for all the
-models they compare <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
+2026)</span>. The redundancy does not decide by majority vote: voting
+across models beat the best single model in one recent study <span class="citation" data-cites="wuScalingResearchAim2025">(Wu et al. 2025,
+1480)</span> and did not in another <span class="citation" data-cites="zhengCanSocialMedia2026">(Zheng et al. 2026, 632)</span>. It
+shows where the coders disagree. The instructions are frozen before each
+run and are the same for both coders, as Zambrano et al. use the same
+prompt for all the models they compare <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
 2025, 408)</span>; model, version and parameters are fixed and declared
 <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
 2025, 406)</span>.</li>
@@ -6189,19 +6588,33 @@ standard <span class="citation" data-cites="zambranoDeidentifyingStudentPersonal
 <li><strong>Arbitration.</strong> The author arbitrates the
 disagreements between the coders. The counterpart is the researcher or
 expert who breaks the tie between two coders <span class="citation" data-cites="lombardContentAnalysisMass2002">(Lombard et al. 2002,
-601)</span>, or decides where two runs of a model differ <span class="citation" data-cites="heseltineLargeLanguageModels2024">(Heseltine and Clemm von
-Hohenberg 2024, 3)</span>. In LLM extraction, a human reads every
-mismatch <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
+601)</span>, and, with language models, in the hybrid procedure in which
+an expert reconciles the differences between two runs of a model <span class="citation" data-cites="heseltineLargeLanguageModels2024">(Heseltine and Clemm von
+Hohenberg 2024, 3, 8)</span>. Zheng et al. recommend the same two steps:
+the models classify first, and humans validate after <span class="citation" data-cites="zhengCanSocialMedia2026">(Zheng et al.
+2026, 634)</span>. In LLM extraction, a human reads every mismatch <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
 2026)</span>, and complete automation is judged premature <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
 2026)</span>. The values on which both coders agree are not reviewed, so
 errors shared by both remain <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
-2025, 417)</span>.</li>
+2025, 417)</span>. The arbiter sees what each coder gave, and a model’s
+explanations can persuade too easily <span class="citation" data-cites="tornbergBestPracticesText2024">(Törnberg 2024, 73)</span>.
+How the disagreements were resolved is reported <span class="citation" data-cites="lombardContentAnalysisMass2002">(Lombard et al. 2002,
+602)</span>.</li>
 <li><strong>Who does what.</strong> The models extract the quotations
 and write the formulas; scripts compute the quantities after extraction;
 the author validates, arbitrates and interprets. Koroleva and Jogezai
 divide the analysis in the same way, with the model on some steps and
 the researchers on the rest <span class="citation" data-cites="korolevaGenerativeArtificialIntelligence2024">(Koroleva and
-Jogezai 2024, 10)</span>, and declare the use of the model <span class="citation" data-cites="korolevaGenerativeArtificialIntelligence2024">(Koroleva and
+Jogezai 2024, 10)</span>.</li>
+<li><strong>Declaring the use of AI.</strong> Emerald asks that the use
+of an AI tool be flagged in the Methods and Acknowledgements, with the
+tool’s name and version <span class="citation" data-cites="ibragimovaEditorialAITools2024">(Ibragimova and Phagava
+2024, 193)</span>, and that the Methods describe how each tool was used,
+with its validation and performance <span class="citation" data-cites="ibragimovaEditorialAITools2024">(Ibragimova and Phagava
+2024, 194)</span>. The reporting checklist of Feuerriegel et al. adds
+the degree of automation and whether the outputs were validated by
+humans <span class="citation" data-cites="feuerriegelReportingChecklistLarge2026">(<span class="nocase">Feuerriegel et al.</span> 2026, 1184)</span>. Koroleva
+and Jogezai give an example of such a declaration <span class="citation" data-cites="korolevaGenerativeArtificialIntelligence2024">(Koroleva and
 Jogezai 2024, 19)</span>.</li>
 <li><strong>For this outline.</strong> A keyword inventory of the
 book-related passages complements the coding. Its counts are indicative;
@@ -6296,6 +6709,26 @@ retrieved.</li>
 libraries report their collections to WorldCat and KVK.</li>
 </ul>
 <div id="refs-en" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-andonieHowWriteGood2010-en" class="csl-entry" role="listitem">
+Andonie, Răzvan, and Ioan Dziţac. 2010. <span>“How to Write a Good Paper
+in Computer Science and How Will It Be Measured by ISI Web of
+Knowledge.”</span> <em>International Journal of Computers,
+Communications &amp; Control</em> 5 (4): 432–46. <a href="https://doi.org/10.15837/ijccc.2010.4.2493">https://doi.org/10.15837/ijccc.2010.4.2493</a>.
+</div>
+<div id="ref-AndreescuGheorghiuEtAl2015a-en" class="csl-entry" role="listitem">
+Andreescu, Liviu, Radu Gheorghiu, Alina Irimia, and Adrian Curaj. 2015.
+<span>“Mergers and Classifications in Romania: Opportunities and
+Obstacles.”</span> In <em>Mergers and Alliances in Higher Education.
+International Practice and Emerging Opportunities</em>, edited by Adrian
+Curaj, Luke Georghiou, Jennifer Cassingena Harper, and Eva Egron-Polak.
+Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-13135-1_3">https://doi.org/10.1007/978-3-319-13135-1_3</a>.
+</div>
+<div id="ref-andreescuReflexiveUniversityBoundary2026-en" class="csl-entry" role="listitem">
+Andreescu, Liviu, and Viorel Proteasa. 2026. <span>“The Reflexive
+University, Boundary Objects, and Academic Research Production.”</span>
+In <em>Reflexivity in Higher Education</em>, edited by L. Matei and R.
+Iucu. Knowledge Studies in Higher Education 16. Springer. <a href="https://doi.org/10.1007/978-3-032-31296-9_18">https://doi.org/10.1007/978-3-032-31296-9_18</a>.
+</div>
 <div id="ref-Cernat2024-en" class="csl-entry" role="listitem">
 Cernat, Vasile. 2024. <span>“The Unprincipled Principal: How Romania’s
 Inconsistent Research Reform Impacted Scientific Output.”</span>
@@ -6312,6 +6745,12 @@ Dagienė, Eleonora. 2023. <span>“Prestige of Scholarly Book Publishers—An
 Investigation into Criteria, Processes, and Practices Across
 Countries.”</span> <em>Research Evaluation</em> 32 (2): 356–70. <a href="https://doi.org/10.1093/reseval/rvac044">https://doi.org/10.1093/reseval/rvac044</a>.
 </div>
+<div id="ref-david2017UniversityMetaranking2018-en" class="csl-entry" role="listitem">
+David, Daniel, Ovidiu Andronesi, Carmen Buzea, Bogdan Florian, Silviu
+Matu, and Lazăr Vlăsceanu. 2018. <span>“The 2017 University Metaranking.
+Romanian University Ranking.”</span> <em>Journal of Research in Higher
+Education</em> 1 (2): 31–50. <a href="https://doi.org/10.24193/jrhe.2017.2.2">https://doi.org/10.24193/jrhe.2017.2.2</a>.
+</div>
 <div id="ref-decuir-gunbyDevelopingUsingCodebook2011-en" class="csl-entry" role="listitem">
 DeCuir-Gunby, Jessica T., Patricia L. Marshall, and Allison W.
 McCulloch. 2011. <span>“Developing and Using a Codebook for the Analysis
@@ -6322,6 +6761,12 @@ Project.”</span> <em>Field Methods</em> 23 (2): 136–55. <a href="https://doi
 Elo, Satu, and Helvi Kyngäs. 2008. <span>“The Qualitative Content
 Analysis Process.”</span> <em>Journal of Advanced Nursing</em> 62 (1):
 107–15. <a href="https://doi.org/10.1111/j.1365-2648.2007.04569.x">https://doi.org/10.1111/j.1365-2648.2007.04569.x</a>.
+</div>
+<div id="ref-feuerriegelReportingChecklistLarge2026-en" class="csl-entry" role="listitem">
+<span class="nocase">Feuerriegel, Stefan, Christopher Barrie, Molly J.
+Crockett, et al.</span> 2026. <span>“A Reporting Checklist for Large
+Language Models in Behavioural Science.”</span> <em>Nature Human
+Behaviour</em> 10 (7): 1182–86. <a href="https://doi.org/10.1038/s41562-026-02492-7">https://doi.org/10.1038/s41562-026-02492-7</a>.
 </div>
 <div id="ref-haltermanCodebookLLMsEvaluating2026-en" class="csl-entry" role="listitem">
 Halterman, Andrew, and Katherine A. Keith. 2026. <span>“Codebook LLMs:
@@ -6334,10 +6779,21 @@ Language Models as a Substitute for Human Experts in Annotating
 Political Text.”</span> <em>Research &amp; Politics</em> 11 (1): 1–10.
 <a href="https://doi.org/10.1177/20531680241236239">https://doi.org/10.1177/20531680241236239</a>.
 </div>
+<div id="ref-horodnicAcademicPerformanceMeasurement2014-en" class="csl-entry" role="listitem">
+Horodnic, Ioana Alexandra. 2014. <span>“Academic Performance:
+Measurement Methods Used in Socio-Economic Sciences.”</span> <em>The
+Yearbook of the „Gh. Zane” Institute of Economic Research</em> 23 (1):
+5–17.
+</div>
 <div id="ref-HsiehShannon2005-en" class="csl-entry" role="listitem">
 Hsieh, Hsiu-Fang, and Sarah E. Shannon. 2005. <span>“Three Approaches to
 Qualitative Content Analysis.”</span> <em>Qualitative Health
 Research</em> 15 (9): 1277–88. <a href="https://doi.org/10.1177/1049732305276687">https://doi.org/10.1177/1049732305276687</a>.
+</div>
+<div id="ref-ibragimovaEditorialAITools2024-en" class="csl-entry" role="listitem">
+Ibragimova, Irina, and Helen Phagava. 2024. <span>“Editorial: AI Tools
+Usage in Emerald Journal Articles.”</span> <em>International Journal of
+Health Governance</em> 29 (3): 193–99. <a href="https://doi.org/10.1108/IJHG-09-2024-163">https://doi.org/10.1108/IJHG-09-2024-163</a>.
 </div>
 <div id="ref-jansenDataExtractionGenerative2025-en" class="csl-entry" role="listitem">
 Jansen, Thorben, Lucas W. Liebenow, Ute Mertens, et al. 2025.
@@ -6384,6 +6840,37 @@ Mills, David. 2025. <span>“One Index, Two Publishers and the Global
 Research Economy.”</span> <em>Oxford Review of Education</em> 51 (4):
 545–60. <a href="https://doi.org/10.1080/03054985.2024.2348448">https://doi.org/10.1080/03054985.2024.2348448</a>.
 </div>
+<div id="ref-MiroiuPăunescuEtAl2015a-en" class="csl-entry" role="listitem">
+Miroiu, Adrian, Mihai Păunescu, and Gabriel-Alexandru Vîiu. 2015.
+<span>“Ranking Romanian Academic Departments in Three Fields of Study
+Using the g -Index.”</span> <em>Quality in Higher Education</em> 8322
+(December): 1–24. <a href="https://doi.org/10.1080/13538322.2015.1051794">https://doi.org/10.1080/13538322.2015.1051794</a>.
+</div>
+<div id="ref-PăunescuHâncean2013a-en" class="csl-entry" role="listitem">
+Păunescu, Mihai, and Gabriel-Marian Hâncean. 2013. <span>“Ranking the
+Romanian Departments of Sociology. Comparative Results of Different
+Evaluation Methodologies.”</span> <em>Quality Assurance Review for
+Higher Education</em> 5 (1-2): 5–17.
+</div>
+<div id="ref-ProteasaAndreescuEtAl2017-en" class="csl-entry" role="listitem">
+Proteasa, Viorel, Liviu Andreescu, and Adrian Curaj. 2017.
+<span>“Differentiation and Academic Control over Policy in Central and
+Eastern Europe: The Case of Romania.”</span> <em>European Educational
+Research Journal</em> 16 (5): 605–25. <a href="https://doi.org/10.1177/1474904117703227">https://doi.org/10.1177/1474904117703227</a>.
+</div>
+<div id="ref-ProteasaMiroiu2015b-en" class="csl-entry" role="listitem">
+Proteasa, Viorel, Mihai Păunescu, and Adrian Miroiu. 2015. <span>“The
+<span>‘Black-Box’</span> of Institutional Scores: Analyzing the
+Distribution of the Values of the H and G Indexes in Medicine Schools in
+Romania.”</span> <em>Journal of Social Research &amp; Policy</em> 6 (1):
+89–104.
+</div>
+<div id="ref-rebeleanuInfluenceAcademicPromotion2020-en" class="csl-entry" role="listitem">
+Rebeleanu, Codrin Horea, and Lăcrămioara Mocanu. 2019. <span>“The
+Influence of Academic Promotion Systems on the Bibliography of the
+Scientific Articles Published in Romanian Medical Journals.”</span>
+<em>New Trends in Psychology</em> 1 (1): 128–32. <a href="https://openalex.org/W7215317536">https://openalex.org/W7215317536</a>.
+</div>
 <div id="ref-Saldaña2013-en" class="csl-entry" role="listitem">
 Saldaña, Johnny. 2013. <em>The Coding Manual for Qualitative
 Researchers</em>. 2. ed. SAGE Publ.
@@ -6394,6 +6881,14 @@ Erp. 2026. <span>“Knowledge Graphs Generation from Cultural Heritage
 Texts: Combining LLMs and Ontological Engineering for Scholarly
 Debates.”</span> <em>Journal of Documentation</em> 82 (7): 206–50. <a href="https://doi.org/10.1108/JD-07-2025-0203">https://doi.org/10.1108/JD-07-2025-0203</a>.
 </div>
+<div id="ref-spanacheStudiuExtinsCu2025-en" class="csl-entry" role="listitem">
+Spanache, Ioana, Ioana Trif, Mariana Chioncel, Mihaela Iorgulescu
+Aioanei, and Adrian Curaj. 2025. <em>Studiu Extins Cu Bune Practici
+Internaționale Privind Finanțarea Pe Bază de Performanță În Instituțiile
+de Învățământ Superior</em>. Versiunea 1. UEFISCDI – Unitatea Executivă
+pentru Finanțarea Învățământului Superior, a Cercetării, Dezvoltării și
+Inovării. <a href="https://doi.org/10.5281/zenodo.17625033">https://doi.org/10.5281/zenodo.17625033</a>.
+</div>
 <div id="ref-tornbergBestPracticesText2024-en" class="csl-entry" role="listitem">
 Törnberg, Petter. 2024. <span>“Best Practices for Text Annotation with
 Large Language Models.”</span> <em>Sociologica</em> 18 (2): 67–85. <a href="https://doi.org/10.6092/issn.1971-8853/19461">https://doi.org/10.6092/issn.1971-8853/19461</a>.
@@ -6402,6 +6897,12 @@ Large Language Models.”</span> <em>Sociologica</em> 18 (2): 67–85. <a href="
 Vanderstraeten, Raf. 2025. <span>“Quo Vadis Web of Science? The
 Expansion and Selection Criteria of the Social Science Citation
 Index.”</span> <em>Social Science Information</em> 64 (2): 248–60. <a href="https://doi.org/10.1177/05390184251349017">https://doi.org/10.1177/05390184251349017</a>.
+</div>
+<div id="ref-Vîiu2015a-en" class="csl-entry" role="listitem">
+Vîiu, Gabriel-Alexandru. 2015. <span>“Quality-Related Funding in
+Romanian Higher Education Throughout 2003 – 2011: A Global
+Assessment.”</span> <em>Romanian Journal of Society and Politics</em> 10
+(2): 26–59.
 </div>
 <div id="ref-VîiuMiroiu2013a-en" class="csl-entry" role="listitem">
 Vîiu, Gabriel-Alexandru, and Adrian Miroiu. 2013. <span>“Evaluarea
@@ -6421,6 +6922,13 @@ Worldcat, Cultural Impact, and Fame.”</span> <em>Journal of the
 Association for Information Science and Technology</em> 69 (12):
 1502–12. <a href="https://doi.org/10.1002/asi.24064">https://doi.org/10.1002/asi.24064</a>.
 </div>
+<div id="ref-wuScalingResearchAim2025-en" class="csl-entry" role="listitem">
+Wu, Mengjia, Gunnar Sivertsen, Lin Zhang, Fan Qi, and Yi Zhang. 2025.
+<span>“Scaling Research Aim Identification: Language Models for
+Classifying Scientific and Societal-Oriented Studies.”</span>
+<em>Journal of the Association for Information Science and
+Technology</em> 76 (11): 1470–87. <a href="https://doi.org/10.1002/asi.70004">https://doi.org/10.1002/asi.70004</a>.
+</div>
 <div id="ref-zambranoDeidentifyingStudentPersonally2025-en" class="csl-entry" role="listitem">
 Zambrano, Andres Felipe, Shreya Singhal, Maciej Pankiewicz, Ryan Shaun
 Baker, Chelsea Porter, and Xiner Liu. 2025. <span>“De-Identifying
@@ -6433,6 +6941,13 @@ Zamfir, Cătălin. 2007. <span>“Sociologia societăților în
 schimbare/sociologia României. Propuneri de noi criterii de evaluare a
 producției sociologice.”</span> <em>Sociologie Românească</em> 5 (2):
 3–6. <a href="https://openalex.org/W7217240281">https://openalex.org/W7217240281</a>.
+</div>
+<div id="ref-zhengCanSocialMedia2026-en" class="csl-entry" role="listitem">
+Zheng, Er-Te, Hui-Zhen Fu, Mike Thelwall, and Zhichao Fang. 2026.
+<span>“Can Social Media Provide Early Warning of Retraction? Evidence
+from Critical Tweets Identified by Human Annotation and Large Language
+Models.”</span> <em>Journal of the Association for Information Science
+and Technology</em> 77 (4): 624–39. <a href="https://doi.org/10.1002/asi.70028">https://doi.org/10.1002/asi.70028</a>.
 </div>
 <div id="ref-bodCanWeRank2015-en" class="csl-entry" role="listitem">
 Zuccala, Alesia, Raf Guns, Roberto Cornacchia, and Rens Bod. 2015.
