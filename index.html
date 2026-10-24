@@ -2849,7 +2849,9 @@ Index”</span>. <em>Social Science Information</em> 64 (2): 248-60. <a href="ht
 <section role="tabpanel" id="p-oct" aria-labelledby="t-oct" hidden>
   <div class="nota"><h2>Cărțile și bibliotecile în standardele românești de promovare</h2>
 
-<p><em>Schiță de lucru, cu rezultate preliminare.</em></p>
+<p><em>Schiță de lucru, cu rezultate preliminare. Schimmenti et al. 2026
+e citat fără pagini, fiindcă exemplarul citit e preprintul
+arXiv.</em></p>
 <h3 id="problema-și-întrebarea-de-cercetare">1. Problema și întrebarea
 de cercetare</h3>
 <p>Evaluarea cercetării s-a construit în mare parte în jurul articolelor
@@ -2956,15 +2958,91 @@ Florian)</span>.</li>
 <p>Felul în care standardele tratează cărțile, editurile și bibliotecile
 n-a fost studiat, din ce arată aceste surse.</p>
 <h3 id="date-și-metodă">4. Date și metodă</h3>
-<p>Corpusul cuprinde standardele minimale naționale pentru gradul de
-profesor universitar, câte un text pe domeniu și pe act, 2004–2025 (194
-de texte). Textele au fost codate cu un codebook care înregistrează, la
-cărți, formula de punctare, condițiile puse cărților, pragurile minime
-și conversia, adică regula prin care articolele ISI se pot număra în
-locul cărților. Pentru această schiță, codarea e completată de o
+<ul>
+<li><strong>Corpusul.</strong> Standardele minimale naționale pentru
+gradul de profesor universitar, 2004–2025. Unitatea analitică e domeniul
+științific arondat unei comisii CNATDCU, la fiecare act: 623 de texte de
+domeniu. Domeniile cu exact același text se codează o singură dată, deci
+modelele codează 194 de texte distincte. Se codează toate textele, nu un
+eșantion; dubla codare a tuturor datelor ocolește problema eșantionului
+la măsurarea fidelității <span class="citation" data-cites="Krippendor2004a">(Krippendorff 2004, 238-39)</span>.</li>
+<li><strong>Designul.</strong> Analiză de conținut dirijată: categoriile
+se stabilesc înainte de codare, din teorie și din codarea manuală
+anterioară a autorului <span class="citation" data-cites="HsiehShannon2005">(Hsieh și Shannon 2005, 1281)</span>. Din
+text se ia numai ce intră în categorii <span class="citation" data-cites="EloKyngäs2008">(Elo și Kyngäs 2008, 112)</span>, iar
+conținutul codat e cel manifest <span class="citation" data-cites="EloKyngäs2008">(Elo și Kyngäs 2008, 109)</span>. Categoriile
+sunt în cea mai mare parte factuale <span class="citation" data-cites="KuckartzRädiker2023">(Kuckartz și Rädiker 2023,
+36-37)</span>; codebook-ul s-a construit întâi deductiv, apoi inductiv
+<span class="citation" data-cites="KuckartzRädiker2023">(Kuckartz și
+Rädiker 2023, 21, 77)</span>. Pragurile și formulele sunt valori atașate
+unui cod <span class="citation" data-cites="Saldaña2013">(Saldaña 2013,
+72-73)</span>.</li>
+<li><strong>Codebook-ul.</strong> Optsprezece coduri, fiecare răspunde
+unei întrebări a operaționalizării, cu rubricile lui Kuckartz și Rädiker
+<span class="citation" data-cites="KuckartzRädiker2023">(Kuckartz și
+Rädiker 2023, 43)</span>. La cărți, codurile înregistrează formula de
+punctare, condițiile puse cărților, pragul minim și conversia, adică
+regula prin care articolele ISI se pot număra în locul cărților. Fiecare
+cod cere citatul exact și, unde actul dă o formulă, o expresie care se
+poate calcula. Codebook-ul l-a scris un om înaintea rulărilor și l-a
+revizuit după ele <span class="citation" data-cites="haltermanCodebookLLMsEvaluating2026">(Halterman și Keith
+2026, 189, 192, 190)</span>; modelele răspund într-o schemă fixă, ca în
+extragerile cu LLM care scriu ieșirea într-o schemă dată <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
+2026)</span>.</li>
+<li><strong>Doi codori.</strong> Două modele de la dezvoltatori diferiți
+codează fiecare text separat, pe același codebook: Claude Sonnet, prin
+agenți, și Qwen 3.6 Plus. Modelele de limbaj fac des aceleași erori, mai
+ales cele de la același dezvoltator <span class="citation" data-cites="kimCorrelatedErrorsLarge2025">(Kim et al. 2025)</span>, iar
+modele diferite se descurcă mai bine la sarcini diferite <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
+2026)</span>. Instrucțiunile se îngheață înaintea fiecărei rulări și
+sunt aceleași pentru ambii codori, cum Zambrano et al. folosesc același
+prompt pentru toate modelele pe care le compară <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
+2025, 408)</span>; modelul, versiunea și parametrii sunt fixați și
+declarați <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
+2025, 406)</span>.</li>
+<li><strong>Calibrarea, separat de validare.</strong> Codebook-ul s-a
+calibrat în runde de codare, citirea dezacordurilor și revizie <span class="citation" data-cites="lombardContentAnalysisMass2002 tornbergBestPracticesText2024">(Lombard
+et al. 2002, 595-96; Törnberg 2024, 72-73)</span>. Pe un pilot de 12
+texte, autorul a hotărât fiecare valoare, o revizuire post hoc a codării
+modelelor <span class="citation" data-cites="marianiRunningScissorsIntegrating2026">(Mariani și Fullerton
+2026, 5)</span>. Calibrarea nu se raportează ca validare <span class="citation" data-cites="tornbergBestPracticesText2024 KuckartzRädiker2023">(Törnberg
+2024, 72, 76; Kuckartz și Rädiker 2023, 197)</span>. Textele din
+calibrare intră în corpus și se recodează cu codebook-ul final <span class="citation" data-cites="decuir-gunbyDevelopingUsingCodebook2011">(DeCuir-Gunby et
+al. 2011, 153)</span>.</li>
+<li><strong>Acordul.</strong> Acordul se măsoară între cei doi codori,
+înainte de rezolvarea dezacordurilor <span class="citation" data-cites="Krippendor2004a">(Krippendorff 2004, 219)</span>: alfa lui
+Krippendorff pentru date nominale, pe fiecare cod, pe unități text × cod
+fixate dinainte <span class="citation" data-cites="Krippendor2004a lombardContentAnalysisMass2002">(Krippendorff
+2004, 242; Lombard et al. 2002, 602)</span>, cu pragurile 0,800 și 0,667
+<span class="citation" data-cites="Krippendor2004a">(Krippendorff 2004,
+241)</span>. Față de valorile validate pe pilot, acordul se raportează
+ca procent de acord, κ al lui Cohen, precizie, recall și F1 <span class="citation" data-cites="jansenDataExtractionGenerative2025">(Jansen
+et al. 2025, 1286-87)</span>, măsurile pe care Zambrano et al. le
+folosesc față de un etalon uman <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
+2025, 409)</span>.</li>
+<li><strong>Arbitrajul.</strong> Autorul arbitrează dezacordurile dintre
+codori. Corespondentul e cercetătorul sau expertul care tranșează între
+doi codori <span class="citation" data-cites="lombardContentAnalysisMass2002">(Lombard et al. 2002,
+601)</span> sau care hotărăște unde două rulări ale unui model diferă
+<span class="citation" data-cites="heseltineLargeLanguageModels2024">(Heseltine și Clemm von
+Hohenberg 2024, 3)</span>. În extragerea cu LLM, un om citește fiecare
+nepotrivire <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
+2026)</span>, iar automatizarea completă e socotită prematură <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
+2026)</span>. Valorile asupra cărora cei doi codori cad de acord nu se
+revizuiesc, deci erorile comune rămân <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
+2025, 417)</span>.</li>
+<li><strong>Cine ce face.</strong> Modelele extrag citatele și scriu
+formulele; scripturile calculează mărimile după extragere; autorul
+validează, arbitrează și interpretează. Koroleva și Jogezai împart
+analiza la fel, cu modelul la unii pași și cercetătorii la ceilalți
+<span class="citation" data-cites="korolevaGenerativeArtificialIntelligence2024">(Koroleva și
+Jogezai 2024, 10)</span>, și declară folosirea modelului <span class="citation" data-cites="korolevaGenerativeArtificialIntelligence2024">(Koroleva și
+Jogezai 2024, 19)</span>.</li>
+<li><strong>Pentru această schiță.</strong> Codarea e completată de o
 inventariere pe cuvinte cheie a pasajelor despre cărți. Cifrele
 inventarierii sunt indicative; rezultatele vor veni dintr-o nouă
-codare.</p>
+codare.</li>
+</ul>
 <h3 id="rezultate-preliminare">5. Rezultate preliminare</h3>
 <h4 id="cartea-ca-criteriu-obligatoriu-pe-domenii-și-ani">5.1 Cartea ca
 criteriu obligatoriu, pe domenii și ani</h4>
@@ -3073,10 +3151,91 @@ Dagienė, Eleonora. 2023. <span>„Prestige of scholarly book publishers—An
 investigation into criteria, processes, and practices across
 countries”</span>. <em>Research Evaluation</em> 32 (2): 356-70. <a href="https://doi.org/10.1093/reseval/rvac044">https://doi.org/10.1093/reseval/rvac044</a>.
 </div>
+<div id="ref-decuir-gunbyDevelopingUsingCodebook2011" class="csl-entry" role="listitem">
+DeCuir-Gunby, Jessica T., Patricia L. Marshall, și Allison W. McCulloch.
+2011. <span>„Developing and Using a Codebook for the Analysis of
+Interview Data: An Example from a Professional Development Research
+Project”</span>. <em>Field Methods</em> 23 (2): 136-55. <a href="https://doi.org/10.1177/1525822x10388468">https://doi.org/10.1177/1525822x10388468</a>.
+</div>
+<div id="ref-EloKyngäs2008" class="csl-entry" role="listitem">
+Elo, Satu, și Helvi Kyngäs. 2008. <span>„The Qualitative Content
+Analysis Process”</span>. <em>Journal of Advanced Nursing</em> 62 (1):
+107-15. <a href="https://doi.org/10.1111/j.1365-2648.2007.04569.x">https://doi.org/10.1111/j.1365-2648.2007.04569.x</a>.
+</div>
+<div id="ref-haltermanCodebookLLMsEvaluating2026" class="csl-entry" role="listitem">
+Halterman, Andrew, și Katherine A. Keith. 2026. <span>„Codebook LLMs:
+Evaluating LLMs as Measurement Tools for Political Science
+Concepts”</span>. <em>Political Analysis</em> 34 (2): 188-204. <a href="https://doi.org/10.1017/pan.2025.10017">https://doi.org/10.1017/pan.2025.10017</a>.
+</div>
+<div id="ref-heseltineLargeLanguageModels2024" class="csl-entry" role="listitem">
+Heseltine, Michael, și Bernhard Clemm von Hohenberg. 2024. <span>„Large
+Language Models as a Substitute for Human Experts in Annotating
+Political Text”</span>. <em>Research &amp; Politics</em> 11 (1): 1-10.
+<a href="https://doi.org/10.1177/20531680241236239">https://doi.org/10.1177/20531680241236239</a>.
+</div>
+<div id="ref-HsiehShannon2005" class="csl-entry" role="listitem">
+Hsieh, Hsiu-Fang, și Sarah E. Shannon. 2005. <span>„Three Approaches to
+Qualitative Content Analysis”</span>. <em>Qualitative Health
+Research</em> 15 (9): 1277-88. <a href="https://doi.org/10.1177/1049732305276687">https://doi.org/10.1177/1049732305276687</a>.
+</div>
+<div id="ref-jansenDataExtractionGenerative2025" class="csl-entry" role="listitem">
+Jansen, Thorben, Lucas W. Liebenow, Ute Mertens, et al. 2025.
+<span>„Data Extraction by Generative Artificial Intelligence: Assessing
+Determinants of Accuracy Using Human-Extracted Data From Systematic
+Review Databases”</span>. <em>Psychological Bulletin</em> 151 (10):
+1280-306. <a href="https://doi.org/10.1037/bul0000501">https://doi.org/10.1037/bul0000501</a>.
+</div>
+<div id="ref-kimCorrelatedErrorsLarge2025" class="csl-entry" role="listitem">
+Kim, Elliot Myunghoon, Avi Garg, Kenny Peng, și Nikhil Garg. 2025.
+<span>„Correlated Errors in Large Language Models”</span>.
+<em>Proceedings of the 42nd International Conference on Machine
+Learning</em> (Vancouver, Canada), Proceedings of Machine Learning
+Research, vol. 267: 30038-66. <a href="https://proceedings.mlr.press/v267/kim25e.html">https://proceedings.mlr.press/v267/kim25e.html</a>.
+</div>
+<div id="ref-korolevaGenerativeArtificialIntelligence2024" class="csl-entry" role="listitem">
+Koroleva, Diana, și Nazir Jogezai. 2024. <span>„Generative Artificial
+Intelligence in Higher Education: Challenges, Opportunities and Future
+Course of Action to Achieve Sustainable Development Goals”</span>. Nr.
+5045944. Preprint, SSRN. <a href="https://doi.org/10.2139/ssrn.5045944">https://doi.org/10.2139/ssrn.5045944</a>.
+</div>
+<div id="ref-Krippendor2004a" class="csl-entry" role="listitem">
+Krippendorff, Klaus. 2004. <em>Content Analysis: An Introduction to Its
+Methodology</em>. SAGE Publications Inc.
+</div>
+<div id="ref-KuckartzRädiker2023" class="csl-entry" role="listitem">
+Kuckartz, Udo, și Stefan Rädiker. 2023. <em>Qualitative Content
+Analysis: Methods, Practice and Software</em>. Second. SAGE
+Publications.
+</div>
+<div id="ref-lombardContentAnalysisMass2002" class="csl-entry" role="listitem">
+Lombard, Matthew, Jennifer Snyder-Duch, și Cheryl Campanella Bracken.
+2002. <span>„Content Analysis in Mass Communication: Assessment and
+Reporting of Intercoder Reliability”</span>. <em>Human Communication
+Research</em> 28 (4): 587-604. <a href="https://doi.org/10.1111/j.1468-2958.2002.tb00826.x">https://doi.org/10.1111/j.1468-2958.2002.tb00826.x</a>.
+</div>
+<div id="ref-marianiRunningScissorsIntegrating2026" class="csl-entry" role="listitem">
+Mariani, Giulia, și Allegra H. Fullerton. 2026. <span>„Running With
+Scissors? Integrating GPT Models Into Public Policy Research”</span>.
+<em>Policy Studies Journal</em>, e70139. <a href="https://doi.org/10.1111/psj.70139">https://doi.org/10.1111/psj.70139</a>.
+</div>
 <div id="ref-millsOneIndexTwo2024" class="csl-entry" role="listitem">
 Mills, David. 2025. <span>„One index, two publishers and the global
 research economy”</span>. <em>Oxford Review of Education</em> 51 (4):
 545-60. <a href="https://doi.org/10.1080/03054985.2024.2348448">https://doi.org/10.1080/03054985.2024.2348448</a>.
+</div>
+<div id="ref-Saldaña2013" class="csl-entry" role="listitem">
+Saldaña, Johnny. 2013. <em>The Coding Manual for Qualitative
+Researchers</em>. 2. ed. SAGE Publ.
+</div>
+<div id="ref-schimmentiKnowledgeGraphsGeneration2026" class="csl-entry" role="listitem">
+Schimmenti, Andrea, Valentina Pasqual, Fabio Vitali, și Marieke van Erp.
+2026. <span>„Knowledge graphs generation from cultural heritage texts:
+combining LLMs and ontological engineering for scholarly
+debates”</span>. <em>Journal of Documentation</em> 82 (7): 206-50. <a href="https://doi.org/10.1108/JD-07-2025-0203">https://doi.org/10.1108/JD-07-2025-0203</a>.
+</div>
+<div id="ref-tornbergBestPracticesText2024" class="csl-entry" role="listitem">
+Törnberg, Petter. 2024. <span>„Best Practices for Text Annotation with
+Large Language Models”</span>. <em>Sociologica</em> 18 (2): 67-85. <a href="https://doi.org/10.6092/issn.1971-8853/19461">https://doi.org/10.6092/issn.1971-8853/19461</a>.
 </div>
 <div id="ref-vanderstraetenQuoVadisWeb2025" class="csl-entry" role="listitem">
 Vanderstraeten, Raf. 2025. <span>„Quo vadis Web of Science? The
@@ -3100,6 +3259,13 @@ White, Howard D., și Alesia Zuccala. 2018. <span>„Libcitations,
 worldcat, cultural impact, and fame”</span>. <em>Journal of the
 Association for Information Science and Technology</em> 69 (12):
 1502-12. <a href="https://doi.org/10.1002/asi.24064">https://doi.org/10.1002/asi.24064</a>.
+</div>
+<div id="ref-zambranoDeidentifyingStudentPersonally2025" class="csl-entry" role="listitem">
+Zambrano, Andres Felipe, Shreya Singhal, Maciej Pankiewicz, Ryan Shaun
+Baker, Chelsea Porter, și Xiner Liu. 2025. <span>„De-identifying student
+personally identifying information in discussion forum posts with large
+language models”</span>. <em>Information and Learning Sciences</em> 126
+(5/6): 401-24. <a href="https://doi.org/10.1108/ILS-11-2024-0156">https://doi.org/10.1108/ILS-11-2024-0156</a>.
 </div>
 <div id="ref-zamfirSociologiaSocietatilorIn2007" class="csl-entry" role="listitem">
 Zamfir, Cătălin. 2007. <span>„Sociologia societăților în
@@ -5852,7 +6018,9 @@ Index.”</span> <em>Social Science Information</em> 64 (2): 248–60. <a href="
 <section role="tabpanel" id="p-oct-en" aria-labelledby="t-oct-en" hidden>
   <div class="nota"><h2>Books and libraries in Romanian promotion standards</h2>
 
-<p><em>Working outline with preliminary results.</em></p>
+<p><em>Working outline with preliminary results. Schimmenti et al. 2026
+is cited without page numbers, because the copy read is the arXiv
+preprint.</em></p>
 <h3 id="problem-and-research-question-en">1. Problem and research
 question</h3>
 <p>Research evaluation has largely been built around journal articles
@@ -5956,14 +6124,89 @@ Florian and Florian)</span>.</li>
 <p>The standards’ treatment of books, publishers and libraries has not,
 as far as these sources show, been studied.</p>
 <h3 id="data-and-method-en">4. Data and method</h3>
-<p>The corpus consists of the national minimum standards for full
-professor, one text per disciplinary field and act, 2004–2025 (194
-texts). The texts were coded with a codebook that records, for books,
-the scoring formula, the conditions placed on books, the minimum
-thresholds, and conversion, the rule by which ISI articles can be
-counted in place of books. For this outline, a keyword inventory of the
+<ul>
+<li><strong>Corpus.</strong> The national minimum standards for full
+professor, 2004–2025. The analytical unit is the scientific field
+assigned to a CNATDCU committee, at each act: 623 field texts. Fields
+with exactly the same text are coded once, so the models code 194
+distinct texts. All texts are coded, not a sample; coding all the data
+twice avoids the sampling problem in measuring reliability <span class="citation" data-cites="Krippendor2004a">(Krippendorff 2004,
+238–39)</span>.</li>
+<li><strong>Design.</strong> Directed content analysis: the categories
+are fixed before coding, from theory and from the author’s earlier
+manual coding <span class="citation" data-cites="HsiehShannon2005">(Hsieh and Shannon 2005, 1281)</span>.
+Only what fits the categories is taken from the text <span class="citation" data-cites="EloKyngäs2008">(Elo and Kyngäs 2008,
+112)</span>, and the content coded is manifest <span class="citation" data-cites="EloKyngäs2008">(Elo and Kyngäs 2008, 109)</span>. The
+categories are mostly factual <span class="citation" data-cites="KuckartzRädiker2023">(Kuckartz and Rädiker 2023,
+36–37)</span>; the codebook was built deductively, then inductively
+<span class="citation" data-cites="KuckartzRädiker2023">(Kuckartz and
+Rädiker 2023, 21, 77)</span>. Thresholds and formulas are values
+attached to a code <span class="citation" data-cites="Saldaña2013">(Saldaña 2013, 72–73)</span>.</li>
+<li><strong>Codebook.</strong> Eighteen codes, each answering a question
+of the operationalization, with Kuckartz and Rädiker’s headings <span class="citation" data-cites="KuckartzRädiker2023">(Kuckartz and Rädiker
+2023, 43)</span>. For books, the codes record the scoring formula, the
+conditions placed on books, the minimum threshold, and conversion, the
+rule by which ISI articles can be counted in place of books. Each code
+asks for the exact quotation and, where the act gives a formula, a
+computable expression. The codebook was written by a human before the
+runs and revised after them <span class="citation" data-cites="haltermanCodebookLLMsEvaluating2026">(Halterman and Keith
+2026, 189, 192, 190)</span>; the models answer in a fixed schema, as in
+LLM extraction pipelines that produce output in a given schema <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
+2026)</span>.</li>
+<li><strong>Two coders.</strong> Two models from different developers
+code each text separately, on the same codebook: Claude Sonnet, through
+agents, and Qwen 3.6 Plus. Language models often make the same errors,
+more so models from the same developer <span class="citation" data-cites="kimCorrelatedErrorsLarge2025">(Kim et al. 2025)</span>, and
+different models do better on different subtasks <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
+2026)</span>. The instructions are frozen before each run and are the
+same for both coders, as Zambrano et al. use the same prompt for all the
+models they compare <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
+2025, 408)</span>; model, version and parameters are fixed and declared
+<span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
+2025, 406)</span>.</li>
+<li><strong>Calibration, apart from validation.</strong> The codebook
+was calibrated in rounds of coding, reading the disagreements and
+revising <span class="citation" data-cites="lombardContentAnalysisMass2002 tornbergBestPracticesText2024">(Lombard
+et al. 2002, 595–96; Törnberg 2024, 72–73)</span>. On a 12-text pilot
+the author decided every value, a post hoc review of the models’ coding
+<span class="citation" data-cites="marianiRunningScissorsIntegrating2026">(Mariani and
+Fullerton 2026, 5)</span>. Calibration is not reported as validation
+<span class="citation" data-cites="tornbergBestPracticesText2024 KuckartzRädiker2023">(Törnberg
+2024, 72, 76; Kuckartz and Rädiker 2023, 197)</span>. The calibration
+texts enter the corpus and are recoded with the final codebook <span class="citation" data-cites="decuir-gunbyDevelopingUsingCodebook2011">(DeCuir-Gunby et
+al. 2011, 153)</span>.</li>
+<li><strong>Agreement.</strong> Agreement is measured between the two
+coders, before disagreements are resolved <span class="citation" data-cites="Krippendor2004a">(Krippendorff 2004, 219)</span>:
+Krippendorff’s alpha for nominal data on each code, on text × code units
+fixed in advance <span class="citation" data-cites="Krippendor2004a lombardContentAnalysisMass2002">(Krippendorff
+2004, 242; Lombard et al. 2002, 602)</span>, with the thresholds 0.800
+and 0.667 <span class="citation" data-cites="Krippendor2004a">(Krippendorff 2004, 241)</span>. Against
+the values validated on the pilot, agreement is reported as percentage
+agreement, Cohen’s κ, precision, recall and F1 <span class="citation" data-cites="jansenDataExtractionGenerative2025">(Jansen et al. 2025,
+1286–87)</span>, the measures Zambrano et al. use against a human
+standard <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
+2025, 409)</span>.</li>
+<li><strong>Arbitration.</strong> The author arbitrates the
+disagreements between the coders. The counterpart is the researcher or
+expert who breaks the tie between two coders <span class="citation" data-cites="lombardContentAnalysisMass2002">(Lombard et al. 2002,
+601)</span>, or decides where two runs of a model differ <span class="citation" data-cites="heseltineLargeLanguageModels2024">(Heseltine and Clemm von
+Hohenberg 2024, 3)</span>. In LLM extraction, a human reads every
+mismatch <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
+2026)</span>, and complete automation is judged premature <span class="citation" data-cites="schimmentiKnowledgeGraphsGeneration2026">(Schimmenti et al.
+2026)</span>. The values on which both coders agree are not reviewed, so
+errors shared by both remain <span class="citation" data-cites="zambranoDeidentifyingStudentPersonally2025">(Zambrano et al.
+2025, 417)</span>.</li>
+<li><strong>Who does what.</strong> The models extract the quotations
+and write the formulas; scripts compute the quantities after extraction;
+the author validates, arbitrates and interprets. Koroleva and Jogezai
+divide the analysis in the same way, with the model on some steps and
+the researchers on the rest <span class="citation" data-cites="korolevaGenerativeArtificialIntelligence2024">(Koroleva and
+Jogezai 2024, 10)</span>, and declare the use of the model <span class="citation" data-cites="korolevaGenerativeArtificialIntelligence2024">(Koroleva and
+Jogezai 2024, 19)</span>.</li>
+<li><strong>For this outline.</strong> A keyword inventory of the
 book-related passages complements the coding. Its counts are indicative;
-the results will come from a new coding.</p>
+the results will come from a new coding.</li>
+</ul>
 <h3 id="preliminary-results-en">5. Preliminary results</h3>
 <h4 id="the-book-as-a-mandatory-criterion-by-field-and-year-en">5.1 The
 book as a mandatory criterion, by field and year</h4>
@@ -6069,10 +6312,91 @@ Dagienė, Eleonora. 2023. <span>“Prestige of Scholarly Book Publishers—An
 Investigation into Criteria, Processes, and Practices Across
 Countries.”</span> <em>Research Evaluation</em> 32 (2): 356–70. <a href="https://doi.org/10.1093/reseval/rvac044">https://doi.org/10.1093/reseval/rvac044</a>.
 </div>
+<div id="ref-decuir-gunbyDevelopingUsingCodebook2011-en" class="csl-entry" role="listitem">
+DeCuir-Gunby, Jessica T., Patricia L. Marshall, and Allison W.
+McCulloch. 2011. <span>“Developing and Using a Codebook for the Analysis
+of Interview Data: An Example from a Professional Development Research
+Project.”</span> <em>Field Methods</em> 23 (2): 136–55. <a href="https://doi.org/10.1177/1525822x10388468">https://doi.org/10.1177/1525822x10388468</a>.
+</div>
+<div id="ref-EloKyngäs2008-en" class="csl-entry" role="listitem">
+Elo, Satu, and Helvi Kyngäs. 2008. <span>“The Qualitative Content
+Analysis Process.”</span> <em>Journal of Advanced Nursing</em> 62 (1):
+107–15. <a href="https://doi.org/10.1111/j.1365-2648.2007.04569.x">https://doi.org/10.1111/j.1365-2648.2007.04569.x</a>.
+</div>
+<div id="ref-haltermanCodebookLLMsEvaluating2026-en" class="csl-entry" role="listitem">
+Halterman, Andrew, and Katherine A. Keith. 2026. <span>“Codebook LLMs:
+Evaluating LLMs as Measurement Tools for Political Science
+Concepts.”</span> <em>Political Analysis</em> 34 (2): 188–204. <a href="https://doi.org/10.1017/pan.2025.10017">https://doi.org/10.1017/pan.2025.10017</a>.
+</div>
+<div id="ref-heseltineLargeLanguageModels2024-en" class="csl-entry" role="listitem">
+Heseltine, Michael, and Bernhard Clemm von Hohenberg. 2024. <span>“Large
+Language Models as a Substitute for Human Experts in Annotating
+Political Text.”</span> <em>Research &amp; Politics</em> 11 (1): 1–10.
+<a href="https://doi.org/10.1177/20531680241236239">https://doi.org/10.1177/20531680241236239</a>.
+</div>
+<div id="ref-HsiehShannon2005-en" class="csl-entry" role="listitem">
+Hsieh, Hsiu-Fang, and Sarah E. Shannon. 2005. <span>“Three Approaches to
+Qualitative Content Analysis.”</span> <em>Qualitative Health
+Research</em> 15 (9): 1277–88. <a href="https://doi.org/10.1177/1049732305276687">https://doi.org/10.1177/1049732305276687</a>.
+</div>
+<div id="ref-jansenDataExtractionGenerative2025-en" class="csl-entry" role="listitem">
+Jansen, Thorben, Lucas W. Liebenow, Ute Mertens, et al. 2025.
+<span>“Data Extraction by Generative Artificial Intelligence: Assessing
+Determinants of Accuracy Using Human-Extracted Data From Systematic
+Review Databases.”</span> <em>Psychological Bulletin</em> 151 (10):
+1280–306. <a href="https://doi.org/10.1037/bul0000501">https://doi.org/10.1037/bul0000501</a>.
+</div>
+<div id="ref-kimCorrelatedErrorsLarge2025-en" class="csl-entry" role="listitem">
+Kim, Elliot Myunghoon, Avi Garg, Kenny Peng, and Nikhil Garg. 2025.
+<span>“Correlated Errors in Large Language Models.”</span>
+<em>Proceedings of the 42nd International Conference on Machine
+Learning</em> (Vancouver, Canada), Proceedings of Machine Learning
+Research, vol. 267: 30038–66. <a href="https://proceedings.mlr.press/v267/kim25e.html">https://proceedings.mlr.press/v267/kim25e.html</a>.
+</div>
+<div id="ref-korolevaGenerativeArtificialIntelligence2024-en" class="csl-entry" role="listitem">
+Koroleva, Diana, and Nazir Jogezai. 2024. <span>“Generative Artificial
+Intelligence in Higher Education: Challenges, Opportunities and Future
+Course of Action to Achieve Sustainable Development Goals.”</span> No.
+5045944. Preprint, SSRN. <a href="https://doi.org/10.2139/ssrn.5045944">https://doi.org/10.2139/ssrn.5045944</a>.
+</div>
+<div id="ref-Krippendor2004a-en" class="csl-entry" role="listitem">
+Krippendorff, Klaus. 2004. <em>Content Analysis: An Introduction to Its
+Methodology</em>. SAGE Publications Inc.
+</div>
+<div id="ref-KuckartzRädiker2023-en" class="csl-entry" role="listitem">
+Kuckartz, Udo, and Stefan Rädiker. 2023. <em>Qualitative Content
+Analysis: Methods, Practice and Software</em>. Second. SAGE
+Publications.
+</div>
+<div id="ref-lombardContentAnalysisMass2002-en" class="csl-entry" role="listitem">
+Lombard, Matthew, Jennifer Snyder-Duch, and Cheryl Campanella Bracken.
+2002. <span>“Content Analysis in Mass Communication: Assessment and
+Reporting of Intercoder Reliability.”</span> <em>Human Communication
+Research</em> 28 (4): 587–604. <a href="https://doi.org/10.1111/j.1468-2958.2002.tb00826.x">https://doi.org/10.1111/j.1468-2958.2002.tb00826.x</a>.
+</div>
+<div id="ref-marianiRunningScissorsIntegrating2026-en" class="csl-entry" role="listitem">
+Mariani, Giulia, and Allegra H. Fullerton. 2026. <span>“Running With
+Scissors? Integrating GPT Models Into Public Policy Research.”</span>
+<em>Policy Studies Journal</em>, e70139. <a href="https://doi.org/10.1111/psj.70139">https://doi.org/10.1111/psj.70139</a>.
+</div>
 <div id="ref-millsOneIndexTwo2024-en" class="csl-entry" role="listitem">
 Mills, David. 2025. <span>“One Index, Two Publishers and the Global
 Research Economy.”</span> <em>Oxford Review of Education</em> 51 (4):
 545–60. <a href="https://doi.org/10.1080/03054985.2024.2348448">https://doi.org/10.1080/03054985.2024.2348448</a>.
+</div>
+<div id="ref-Saldaña2013-en" class="csl-entry" role="listitem">
+Saldaña, Johnny. 2013. <em>The Coding Manual for Qualitative
+Researchers</em>. 2. ed. SAGE Publ.
+</div>
+<div id="ref-schimmentiKnowledgeGraphsGeneration2026-en" class="csl-entry" role="listitem">
+Schimmenti, Andrea, Valentina Pasqual, Fabio Vitali, and Marieke van
+Erp. 2026. <span>“Knowledge Graphs Generation from Cultural Heritage
+Texts: Combining LLMs and Ontological Engineering for Scholarly
+Debates.”</span> <em>Journal of Documentation</em> 82 (7): 206–50. <a href="https://doi.org/10.1108/JD-07-2025-0203">https://doi.org/10.1108/JD-07-2025-0203</a>.
+</div>
+<div id="ref-tornbergBestPracticesText2024-en" class="csl-entry" role="listitem">
+Törnberg, Petter. 2024. <span>“Best Practices for Text Annotation with
+Large Language Models.”</span> <em>Sociologica</em> 18 (2): 67–85. <a href="https://doi.org/10.6092/issn.1971-8853/19461">https://doi.org/10.6092/issn.1971-8853/19461</a>.
 </div>
 <div id="ref-vanderstraetenQuoVadisWeb2025-en" class="csl-entry" role="listitem">
 Vanderstraeten, Raf. 2025. <span>“Quo Vadis Web of Science? The
@@ -6096,6 +6420,13 @@ White, Howard D., and Alesia Zuccala. 2018. <span>“Libcitations,
 Worldcat, Cultural Impact, and Fame.”</span> <em>Journal of the
 Association for Information Science and Technology</em> 69 (12):
 1502–12. <a href="https://doi.org/10.1002/asi.24064">https://doi.org/10.1002/asi.24064</a>.
+</div>
+<div id="ref-zambranoDeidentifyingStudentPersonally2025-en" class="csl-entry" role="listitem">
+Zambrano, Andres Felipe, Shreya Singhal, Maciej Pankiewicz, Ryan Shaun
+Baker, Chelsea Porter, and Xiner Liu. 2025. <span>“De-Identifying
+Student Personally Identifying Information in Discussion Forum Posts
+with Large Language Models.”</span> <em>Information and Learning
+Sciences</em> 126 (5/6): 401–24. <a href="https://doi.org/10.1108/ILS-11-2024-0156">https://doi.org/10.1108/ILS-11-2024-0156</a>.
 </div>
 <div id="ref-zamfirSociologiaSocietatilorIn2007-en" class="csl-entry" role="listitem">
 Zamfir, Cătălin. 2007. <span>“Sociologia societăților în
