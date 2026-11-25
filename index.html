@@ -2,6 +2,16 @@
 
 <meta charset="utf-8">
 <title>Thirty years of counting scientific articles</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>
+/* pe telefon: fără viewport, site-ul se așeza la 980 px; taburile nu se lățesc după un cuvânt lung, un tabel sau un bloc de cod */
+body { margin: 0; }
+[role="tabpanel"] { grid-template-columns: minmax(0, 1fr); }
+[role="tabpanel"] * { min-width: 0; }
+[role="tabpanel"] p, [role="tabpanel"] li, [role="tabpanel"] h2, [role="tabpanel"] h3, [role="tabpanel"] h4, [role="tabpanel"] td { overflow-wrap: anywhere; }
+@media (max-width: 760px) { [role="tabpanel"] table:not(.tablebox table):not(.matrix) { display: block; overflow-x: auto; } }
+[role="tabpanel"] pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+</style>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
 <style>
@@ -197,6 +207,7 @@ section.cod th { width: 11em; font-weight: 600; }
   <button role="tab" id="t-dsc" aria-controls="p-dsc" aria-selected="false" tabindex="-1">Descriptori</button>
   <button role="tab" id="t-arc" aria-controls="p-arc" aria-selected="false" tabindex="-1">Arcanum: criterii</button>
   <button role="tab" id="t-isi" aria-controls="p-isi" aria-selected="false" tabindex="-1">Arcanum: ISI</button>
+  <button role="tab" id="t-om" aria-controls="p-om" aria-selected="false" tabindex="-1">OM-uri</button>
   <button role="tab" id="t-ref" aria-controls="p-ref" aria-selected="false" tabindex="-1">Referințe</button>
 </div>
 
@@ -79197,6 +79208,525 @@ niciunul.</li>
 
 </section>
 
+<section role="tabpanel" id="p-om" aria-labelledby="t-om" hidden>
+  <div class="subtabs">
+    <button type="button" class="subtab" data-sub="om-s1" aria-pressed="true">Standardele pentru profesor dinainte de OM 4.823/2004</button>
+    <button type="button" class="subtab" data-sub="om-s2" aria-pressed="false">Ordine pre 2004</button>
+    <button type="button" class="subtab" data-sub="om-s3" aria-pressed="false">Toate ordinele din document</button>
+  </div>
+<div id="om-s1">
+<h2
+id="om-s1-standardele-pentru-profesor-dinainte-de-om-4.8232004-lista-și-căutarea-pe-web-archive">Standardele
+pentru profesor dinainte de OM 4.823/2004: lista și căutarea pe Web
+Archive</h2>
+<p>Lista adună actele care, după ce s-a găsit până acum în proiect, ar
+fi stabilit criterii pentru gradul de profesor universitar înainte de OM
+4.823 din 30 septembrie 2004, primul act din corpus. Vin din trei surse:
+articolele de presă citite pe Arcanum, lista ordinelor pomenite cu număr
+în acele articole și paginile site-ului ministerului arhivate pe Web
+Archive. Căutarea pe Web Archive s-a făcut pe 25 noiembrie 2026, la
+cererea autorului, ca să se afle dacă textul acestor acte și al
+proiectelor de standarde a rămas pe site-urile arhivate.</p>
+<p>Rândurile 6 și 9 au textul găsit pe Web Archive. Celelalte acte sunt
+numai identificate, în presă sau în textul altui ordin. Nu se poate
+confirma din aceste date că au existat, cu numărul și data scrise. Le-ar
+confirma textul lor, din Monitorul Oficial sau din arhiva ministerului
+ori a CNATDCU.</p>
+<h3 id="om-s1-lista">Lista</h3>
+<div class="tablebox"><table class="small">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Actul</th>
+<th>De unde îl știm</th>
+<th>Ce s-a găsit pe Web Archive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Criteriile afișate pentru posturile de conferențiar și profesor sub
+miniștrii din 1990–1991, fără act numit</td>
+<td>România Liberă, 23 decembrie 1997</td>
+<td>Nimic. Site-ul ministerului e arhivat abia din februarie 1998.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ordinul nr. 6.042 din 24.08.1992, care lăsa Comisiei Superioare de
+Atestare numai dosarele fără unanimitate în comisia de concurs sau fără
+două treimi în consiliu și senat; suspendat la sfârșitul lui 1992</td>
+<td>România Liberă, 4 februarie și 18 martie 1993</td>
+<td>Nimic, din același motiv.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ordinul nr. 5.723/1994, privind concursurile pentru conferențiar și
+profesor, abrogat de OM 4.822/2004; după presă, nepublicat în Monitorul
+Oficial</td>
+<td>OM 4.822/2004 (abrogarea); Cotidianul, 4 aprilie 2005</td>
+<td>Nimic. Singurul fișier cu numărul 5723 de pe site-ul ministerului e
+alt ordin, din 2003, despre planurile-cadru pentru liceu.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ordinul din 1995 al ministrului Liviu Maior, fără număr</td>
+<td>Curierul Național, 16 aprilie 2004</td>
+<td>Nimic.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Ordinul nr. 3.462 din 23 martie 1998, după care angajarea tinerilor
+specialiști pe posturile din universități se face pe baza performanței
+științifice, fără criteriul vechimii</td>
+<td>Textul ordinului de la rândul 6</td>
+<td>Nimic. Ordinul nu are pagină pe site-ul ministerului.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Ordinul nr. 4.836 din 20.10.1998, „privind încurajarea tinerilor
+specialisti sa ocupe posturi didactice în universitatile din tara”. Pune
+în aplicare ordinul de la rândul 5: accesul la posturile din ierarhia
+didactică nu mai depinde de vechime, ci numai de performanțe
+științifice, „stabilite conform practicii internationale”</td>
+<td>Găsit acum, pe Web Archive</td>
+<td><strong>Găsit.</strong> Pagina ordinului de pe site-ul ministerului,
+captura din 2.10.1999. Ordinul nu spune care sunt aceste
+performanțe.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Ordinul sau proiectul de ordin din 1999 al ministrului Andrei Marga,
+fără număr; trimis deputaților în aprilie 2004 drept criteriile după
+care judeca CNATDCU</td>
+<td>România Liberă și Curierul Național, 16 aprilie 2004</td>
+<td>Nimic. Niciuna dintre cele 528 de pagini de ordine și note arhivate
+din 1998–2003 nu-l are.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Criteriile comisiei medicale a CNATDCU din 1999 (între ele, cel
+puțin 20 de lucrări în reviste de vârf, din care 10 ca prim autor)</td>
+<td>Cotidianul, 28 ianuarie 2008</td>
+<td>Nimic.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Proiectul „Sistemul de evaluare privind ocuparea
+posturilor/acordarea titlurilor de profesor universitar”, anexă la un
+ordin fără număr, pus în dezbatere publică în iunie 2004</td>
+<td>Găsit acum, pe Web Archive</td>
+<td><strong>Găsit.</strong> Pagina CNATDCU de pe site-ul ministerului,
+arhivată pe 22 iunie 2004, îl listează ca „document in dezbatere
+publica”, alături de proiectele pentru doctorat, conferențiar,
+cercetător științific gradul I și II, conducător de doctorat și
+instituție organizatoare de doctorat. Fișierul pentru profesor e arhivat
+pe 26 iunie 2004.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Proiectul de la rândul 9 e din 2004, dar de dinainte de OM 4.823.
+Pagina CNATDCU de pe site-ul ministerului s-a schimbat în decembrie
+2004, când proiectele au fost înlocuite cu ordinele adoptate (OM
+4.821–4.828 din 30.09.2004). Din proiectele din iunie, numai două sunt
+arhivate în forma din iunie: cel pentru profesor și cel pentru
+conferențiar. Conferențiarul nu e în research design; fișierul lui stă
+în dosar, nefolosit.</p>
+<p>Fișierele găsite, în dosarul proiectului
+<code>explorari/standarde_ante_2004/surse/</code>:</p>
+<ul>
+<li>OM 4.836/1998, captura din 2.10.1999: <a
+href="https://web.archive.org/web/19991002201050/http://www.edu.ro:80/om4836.htm">web.archive.org/web/19991002201050/http://www.edu.ro:80/om4836.htm</a>;</li>
+<li>proiectul pentru profesor, captura din 26.06.2004: <a
+href="https://web.archive.org/web/20040626115622/http://www.edu.ro:80/download/critun2.pdf">web.archive.org/web/20040626115622/http://www.edu.ro:80/download/critun2.pdf</a>;</li>
+<li>proiectul pentru conferențiar, captura din 18.06.2004: <a
+href="https://web.archive.org/web/20040618185655/http://www.edu.ro:80/download/critun1.pdf">web.archive.org/web/20040618185655/http://www.edu.ro:80/download/critun1.pdf</a>;</li>
+<li>pagina CNATDCU de pe site-ul ministerului, captura din 22.06.2004:
+<a
+href="https://web.archive.org/web/20040622094545/http://www.edu.ro:80/cnatdcu.htm">web.archive.org/web/20040622094545/http://www.edu.ro:80/cnatdcu.htm</a>.</li>
+</ul>
+<h3
+id="om-s1-ordinele-dinainte-de-2004-din-lista-arcanum-care-nu-privesc-criteriile">Ordinele
+dinainte de 2004 din lista Arcanum, care nu privesc criteriile</h3>
+<p>Lista ordinelor pomenite în presă are cinci ordine dinainte de 2004.
+Relevanța e cea dată la citirea articolelor; pe Web Archive nu le-am
+căutat.</p>
+<div class="tablebox"><table class="small">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Ordinul</th>
+<th>Ce scrie articolul</th>
+<th>Relevanța</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11.053/10.11.1991</td>
+<td>art. 3 alin. 2, fără obiectul ordinului</td>
+<td>nerelevant</td>
+</tr>
+<tr>
+<td>7.179/1992</td>
+<td>ordin al ministrului învățământului</td>
+<td>nehotărât</td>
+</tr>
+<tr>
+<td>4.355/1993</td>
+<td>noua structură a anului universitar</td>
+<td>nehotărât</td>
+</tr>
+<tr>
+<td>3.300/2002</td>
+<td>comisiile Consiliului Național de Atestare</td>
+<td>nerelevant</td>
+</tr>
+<tr>
+<td>4.848/30.10.2002</td>
+<td>conferirea calității de conducător de doctorat</td>
+<td>nehotărât</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="om-s1-unde-s-a-căutat-pe-web-archive">Unde s-a căutat pe Web
+Archive</h3>
+<ul>
+<li><strong>Site-ul ministerului (edu.ro), 1998–2004.</strong> Indexul
+întreg, aproximativ 80.000 de adrese; capturile încep în februarie 1998,
+iar cele mai multe sunt din 2002–2004. Am căutat după numele adreselor
+(criterii, titluri, CNATDCU, concurs, ordin, profesor) și am deschis
+paginile și fișierele potrivite. Toate cele 528 de pagini de ordine și
+note din 1998–2003 sunt citite după titlu, iar cinci dintre ele, despre
+universități și posturi, întregi.</li>
+<li><strong>Alte domenii ale ministerului.</strong> men.ro și mec.ro:
+practic nimic arhivat. cnatdcu.ro: nicio captură până în 2006.</li>
+<li><strong>Consiliile din jurul ministerului</strong> (cncsis.ro,
+cnfis.ro, cneaa.ro), 1996–2004: am căutat adresele cu nume despre
+criterii, concursuri, regulamente, ordine și titluri, 239 în total, și
+am citit paginile care puteau privi posturile. Niciuna nu are criterii
+pentru profesor. Regulamentul CNCSIS privește granturile de cercetare,
+ordinul din 1994 de pe site-ul CNFIS înființează CNFIS, iar standardele
+CNEAA privesc învățământul la distanță și cu frecvență redusă.</li>
+<li><strong>Site-urile universităților</strong>, 1996–2004: am căutat
+adresele cu aceleași nume pe site-urile a 24 de universități. La 15
+dintre ele serverul Web Archive a oprit interogarea de fiecare dată:
+unibuc.ro, ubbcluj.ro, uaic.ro, pub.ro, ase.ro, uvt.ro, tuiasi.ro,
+upt.ro, ucv.ro, unitbv.ro, ulbsibiu.ro, uoradea.ro, ugal.ro,
+univ-ovidius.ro, usamv.ro. Trei n-au nicio adresă potrivită: umf.ro,
+umfcd.ro, umftgm.ro. Celelalte șase (umfiasi.ro, umfcluj.ro, umft.ro,
+utcluj.ro, snspa.ro, utcb.ro) au adrese despre admitere, burse, doctorat
+și concursuri pentru elevi, niciuna despre posturile didactice. Lista de
+regulamente a Universității Tehnice din Cluj-Napoca din 2004 nu are un
+regulament pentru ocuparea posturilor.</li>
+</ul>
+
+</div>
+<div id="om-s2" hidden>
+<h2 id="om-s2-ordine-pre-2004">Ordine pre 2004</h2>
+<p>Textele găsite pe Web Archive, pe situl arhivat al ministerului
+(edu.ro), și actul identificat în ele.</p>
+<h3 id="om-s2-cu-text-găsit">Cu text găsit</h3>
+<div class="tablebox"><table class="small">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Actul</th>
+<th>Ce prevede</th>
+<th>Sursa</th>
+<th>În Zotero</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ordinul nr. 4.836 din 20.10.1998 „privind încurajarea tinerilor
+specialisti sa ocupe posturi didactice în universitatile din tara”</td>
+<td>Pune în aplicare OM 3.462/1998: accesul la posturile din ierarhia
+didactică nu mai depinde de vechime, ci numai de performanțe
+științifice, „stabilite conform practicii internationale”. Nu spune care
+sunt aceste performanțe.</td>
+<td><a
+href="https://web.archive.org/web/19991002201050/http://www.edu.ro:80/om4836.htm">Captura
+din 2.10.1999</a></td>
+<td>Nu încă: rămâne la hotărârea autorului cum intră un act care nu e pe
+Portal și cum se citează o captură Web Archive.</td>
+</tr>
+<tr>
+<td>Proiectul „Sistem de evaluare privind ocuparea posturilor /
+acordarea titlurilor de profesor universitar”, anexă la un ordin fără
+număr, în dezbatere publică în iunie 2004</td>
+<td>Condițiile preliminare, criteriile de evaluare și dosarul de concurs
+pentru profesor, înainte de OM 4.823/2004.</td>
+<td><a
+href="https://web.archive.org/web/20040626115622/http://www.edu.ro:80/download/critun2.pdf">Fișierul,
+captura din 26.06.2004</a>; <a
+href="https://web.archive.org/web/20040622094545/http://www.edu.ro:80/cnatdcu.htm">pagina
+CNATDCU care îl listează, captura din 22.06.2004</a></td>
+<td>Da, în BO_ISI › legislation, cu PDF-ul și adresa capturii.</td>
+</tr>
+<tr>
+<td>Proiectul „Sistem de evaluare privind ocuparea posturilor /
+acordarea titlurilor de conferențiar universitar”, anexă la un ordin
+fără număr, în dezbatere publică în iunie 2004</td>
+<td>Condițiile preliminare, criteriile de evaluare și dosarul de concurs
+pentru conferențiar, înainte de OM 4.822/2004.</td>
+<td><a
+href="https://web.archive.org/web/20040618185655/http://www.edu.ro:80/download/critun1.pdf">Fișierul,
+captura din 18.06.2004</a></td>
+<td>Da, în BO_ISI › legislation, cu PDF-ul și adresa capturii.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="om-s2-identificat-fără-text">Identificat, fără text</h3>
+<div class="tablebox"><table class="small">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Actul</th>
+<th>Ce prevede, după OM 4.836/1998</th>
+<th>Unde s-a căutat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ordinul nr. 3.462 din 23 martie 1998</td>
+<td>Angajarea tinerilor specialiști pe posturile din universități se
+face pe baza performanței științifice, fără criteriul vechimii.</td>
+<td>Portalul Legislativ și situl ministerului arhivat: nu e pe
+niciunul.</td>
+</tr>
+</tbody>
+</table></div>
+<p>OM 3.462/1998 e numai identificat în textul altui ordin. Nu se poate
+confirma din aceste date că există, cu numărul și data scrise.</p>
+<h3 id="om-s2-denumirile-consiliului-de-atestare">Denumirile consiliului
+de atestare</h3>
+<p>Căutate pe Portalul Legislativ, în textul actelor semnate până în
+2004, și în titlurile ordinelor de după. După 1989 consiliul a avut trei
+denumiri.</p>
+<div class="tablebox"><table class="small">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Perioada</th>
+<th>Denumirea</th>
+<th>Actele în care apare</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1990–1992</td>
+<td>Comisia superioară de atestare</td>
+<td>HG 428/1990 și HG 299/1992: validează propunerile senatelor pentru
+gradul de profesor consultant.</td>
+</tr>
+<tr>
+<td>1995–2024</td>
+<td>Consiliul Național de Atestare a Titlurilor, Diplomelor și
+Certificatelor Universitare</td>
+<td>Legea învățământului nr. 84/1995, în forma publicată: confirmă
+titlurile de conferențiar și de profesor universitar. Apoi Legea
+128/1997 și hotărârile despre doctorat din 1996 și 1999.</td>
+</tr>
+<tr>
+<td>din 2024</td>
+<td>Comisia Națională de Atestare a Titlurilor, Diplomelor și
+Certificatelor Universitare (CNATDCU)</td>
+<td>Titlurile ordinelor, de la OM 5.760 din 8 august 2024.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Înainte de 1989, consiliul se numea Comisia superioară de diplome.
+Apare din Decretul nr. 15/1950 pentru organizarea doctoratului.
+Hotărârea Consiliului de Miniștri nr. 2.064/1969 o organiza, iar HG
+474/1999 a declarat-o abrogată.</p>
+<p>Nu se poate stabili din aceste date când s-a trecut de la comisie la
+consiliu, între iunie 1992 și iulie 1995. Nu se poate stabili nici ce
+act a înființat comisia din 1990, nici ce regulament a avut consiliul
+înainte de OM 4.821/2004. Actele acestea nu sunt pe Portal. HG 458/1994
+numește consiliul, dar Portalul o are numai în forma republicată în
+1996.</p>
+<p>În Zotero, BO_ISI › legislation: HG 428/1990, HG 299/1992, HG
+458/1994 în forma republicată în 1996, Legea 84/1995 în forma publicată
+și HG 474/1999.</p>
+
+</div>
+<div id="om-s3" hidden>
+<h2 id="om-s3-toate-ordinele-din-document">Toate ordinele din
+document</h2>
+<p>Ordinele de ministru pomenite în celelalte două taburi, în ordinea
+datei. Coloana a doua spune ce știm despre fiecare și de unde.</p>
+<div class="tablebox"><table class="small">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Ordinul</th>
+<th>Ce știm despre el</th>
+<th>Textul</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11.053 din 10.11.1991</td>
+<td>Pomenit în presă (Arcanum), cu art. 3 alin. 2, fără obiectul
+ordinului. Nerelevant la citirea articolului.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>6.042 din 24.08.1992</td>
+<td>Din presă: lăsa Comisiei Superioare de Atestare numai dosarele fără
+unanimitate în comisia de concurs sau fără două treimi în consiliu și
+senat. Suspendat la sfârșitul lui 1992.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>7.179/1992</td>
+<td>Din presă: ordin al ministrului învățământului, fără obiect.
+Nehotărât.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>4.355/1993</td>
+<td>Din presă: noua structură a anului universitar. Nehotărât.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>5.723/1994</td>
+<td>Concursurile pentru conferențiar și profesor. Abrogat de OM
+4.822/2004; după presă, nepublicat în Monitorul Oficial.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>Ordinul din 1995 al ministrului Liviu Maior, fără număr</td>
+<td>Din presă.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>3.462 din 23.03.1998</td>
+<td>Identificat în textul OM 4.836/1998: angajarea tinerilor specialiști
+pe posturile din universități se face pe baza performanței științifice,
+fără criteriul vechimii.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>4.836 din 20.10.1998</td>
+<td>Încurajarea tinerilor specialiști să ocupe posturi didactice în
+universități. Pune în aplicare OM 3.462/1998.</td>
+<td>Pe Web Archive, captura din 2.10.1999; în Zotero, nu încă</td>
+</tr>
+<tr>
+<td>Ordinul sau proiectul de ordin din 1999 al ministrului Andrei Marga,
+fără număr</td>
+<td>Din presă: trimis deputaților în aprilie 2004 drept criteriile după
+care judeca CNATDCU.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>3.300/2002</td>
+<td>Din presă: comisiile Consiliului Național de Atestare.
+Nerelevant.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>4.848 din 30.10.2002</td>
+<td>Din presă: conferirea calității de conducător de doctorat.
+Nehotărât.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>5.723/2003</td>
+<td>Planurile-cadru pentru liceu. Are același număr ca ordinul din
+1994.</td>
+<td>Pe situl ministerului arhivat</td>
+</tr>
+<tr>
+<td>Ordin fără număr, iunie 2004: proiectul pentru profesor</td>
+<td>Anexa, Sistemul de evaluare pentru profesor universitar, în
+dezbatere publică.</td>
+<td>Pe Web Archive; în Zotero</td>
+</tr>
+<tr>
+<td>Ordin fără număr, iunie 2004: proiectul pentru conferențiar</td>
+<td>Anexa, Sistemul de evaluare pentru conferențiar universitar, în
+dezbatere publică.</td>
+<td>Pe Web Archive; în Zotero</td>
+</tr>
+<tr>
+<td>4.821 din 30.09.2004</td>
+<td>Regulamentul de organizare și funcționare a CNATDCU.</td>
+<td>Pe Portal</td>
+</tr>
+<tr>
+<td>4.822 din 30.09.2004</td>
+<td>Sistemul de evaluare pentru conferențiar universitar. Abrogă OM
+5.723/1994.</td>
+<td>Pe Portal</td>
+</tr>
+<tr>
+<td>4.823 din 30.09.2004</td>
+<td>Sistemul de evaluare pentru profesor universitar. Primul act din
+corpus.</td>
+<td>Pe Portal</td>
+</tr>
+<tr>
+<td>4.824 din 30.09.2004</td>
+<td>Sistemul de evaluare pentru cercetător științific gradul II.</td>
+<td>Pe Portal</td>
+</tr>
+<tr>
+<td>4.825 din 30.09.2004</td>
+<td>Sistemul de evaluare pentru cercetător științific gradul I.</td>
+<td>Pe Portal</td>
+</tr>
+<tr>
+<td>4.826–4.828/2004</td>
+<td>Pomenite în document în șirul OM 4.821–4.828 din 30.09.2004. Căutate
+după număr, nu apar pe Portal, deci obiectul lor nu e verificat.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>4.014 din 14.03.2024</td>
+<td>Modifică componența nominală a Consiliului Național de Atestare
+pentru mandatul 2020–2024. E ultimul ordin cu „Consiliul” în titlu.</td>
+<td>Pe Portal</td>
+</tr>
+<tr>
+<td>5.760 din 08.08.2024</td>
+<td>Regulamentul de organizare și funcționare a Comisiei Naționale de
+Atestare (CNATDCU). E primul ordin cu „Comisia” în titlu.</td>
+<td>Pe Portal</td>
+</tr>
+</tbody>
+</table></div>
+
+</div>
+</section>
+
 <section role="tabpanel" id="p-ref" aria-labelledby="t-ref" hidden>
   <h2>Referințe</h2>
   <h3 style="margin:.6em 0 0">Literatura de metodă</h3>
@@ -79231,6 +79761,7 @@ niciunul.</li>
   <button role="tab" id="t-dsc-en" aria-controls="p-dsc-en" aria-selected="false" tabindex="-1">Descriptors</button>
   <button role="tab" id="t-arc-en" aria-controls="p-arc-en" aria-selected="false" tabindex="-1">Arcanum: criteria</button>
   <button role="tab" id="t-isi-en" aria-controls="p-isi-en" aria-selected="false" tabindex="-1">Arcanum: ISI</button>
+  <button role="tab" id="t-om-en" aria-controls="p-om-en" aria-selected="false" tabindex="-1">Ministerial orders</button>
   <button role="tab" id="t-ref-en" aria-controls="p-ref-en" aria-selected="false" tabindex="-1">References</button>
 </div>
 
@@ -158294,6 +158825,525 @@ ce cer standardele pentru titluri sau posturi. Acte pomenite:
 niciunul.</li>
 </ul>
 
+</section>
+
+<section role="tabpanel" id="p-om-en" aria-labelledby="t-om-en" hidden>
+<p class="small">This tab is written in Romanian.</p>  <div class="subtabs">
+    <button type="button" class="subtab" data-sub="om-s1" aria-pressed="true">Standardele pentru profesor dinainte de OM 4.823/2004</button>
+    <button type="button" class="subtab" data-sub="om-s2" aria-pressed="false">Ordine pre 2004</button>
+    <button type="button" class="subtab" data-sub="om-s3" aria-pressed="false">Toate ordinele din document</button>
+  </div>
+<div id="om-s1-en">
+<h2
+id="om-s1-standardele-pentru-profesor-dinainte-de-om-4.8232004-lista-și-căutarea-pe-web-archive-en">Standardele
+pentru profesor dinainte de OM 4.823/2004: lista și căutarea pe Web
+Archive</h2>
+<p>Lista adună actele care, după ce s-a găsit până acum în proiect, ar
+fi stabilit criterii pentru gradul de profesor universitar înainte de OM
+4.823 din 30 septembrie 2004, primul act din corpus. Vin din trei surse:
+articolele de presă citite pe Arcanum, lista ordinelor pomenite cu număr
+în acele articole și paginile site-ului ministerului arhivate pe Web
+Archive. Căutarea pe Web Archive s-a făcut pe 25 noiembrie 2026, la
+cererea autorului, ca să se afle dacă textul acestor acte și al
+proiectelor de standarde a rămas pe site-urile arhivate.</p>
+<p>Rândurile 6 și 9 au textul găsit pe Web Archive. Celelalte acte sunt
+numai identificate, în presă sau în textul altui ordin. Nu se poate
+confirma din aceste date că au existat, cu numărul și data scrise. Le-ar
+confirma textul lor, din Monitorul Oficial sau din arhiva ministerului
+ori a CNATDCU.</p>
+<h3 id="om-s1-lista-en">Lista</h3>
+<div class="tablebox"><table class="small">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Actul</th>
+<th>De unde îl știm</th>
+<th>Ce s-a găsit pe Web Archive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Criteriile afișate pentru posturile de conferențiar și profesor sub
+miniștrii din 1990–1991, fără act numit</td>
+<td>România Liberă, 23 decembrie 1997</td>
+<td>Nimic. Site-ul ministerului e arhivat abia din februarie 1998.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ordinul nr. 6.042 din 24.08.1992, care lăsa Comisiei Superioare de
+Atestare numai dosarele fără unanimitate în comisia de concurs sau fără
+două treimi în consiliu și senat; suspendat la sfârșitul lui 1992</td>
+<td>România Liberă, 4 februarie și 18 martie 1993</td>
+<td>Nimic, din același motiv.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ordinul nr. 5.723/1994, privind concursurile pentru conferențiar și
+profesor, abrogat de OM 4.822/2004; după presă, nepublicat în Monitorul
+Oficial</td>
+<td>OM 4.822/2004 (abrogarea); Cotidianul, 4 aprilie 2005</td>
+<td>Nimic. Singurul fișier cu numărul 5723 de pe site-ul ministerului e
+alt ordin, din 2003, despre planurile-cadru pentru liceu.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ordinul din 1995 al ministrului Liviu Maior, fără număr</td>
+<td>Curierul Național, 16 aprilie 2004</td>
+<td>Nimic.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Ordinul nr. 3.462 din 23 martie 1998, după care angajarea tinerilor
+specialiști pe posturile din universități se face pe baza performanței
+științifice, fără criteriul vechimii</td>
+<td>Textul ordinului de la rândul 6</td>
+<td>Nimic. Ordinul nu are pagină pe site-ul ministerului.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Ordinul nr. 4.836 din 20.10.1998, „privind încurajarea tinerilor
+specialisti sa ocupe posturi didactice în universitatile din tara”. Pune
+în aplicare ordinul de la rândul 5: accesul la posturile din ierarhia
+didactică nu mai depinde de vechime, ci numai de performanțe
+științifice, „stabilite conform practicii internationale”</td>
+<td>Găsit acum, pe Web Archive</td>
+<td><strong>Găsit.</strong> Pagina ordinului de pe site-ul ministerului,
+captura din 2.10.1999. Ordinul nu spune care sunt aceste
+performanțe.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Ordinul sau proiectul de ordin din 1999 al ministrului Andrei Marga,
+fără număr; trimis deputaților în aprilie 2004 drept criteriile după
+care judeca CNATDCU</td>
+<td>România Liberă și Curierul Național, 16 aprilie 2004</td>
+<td>Nimic. Niciuna dintre cele 528 de pagini de ordine și note arhivate
+din 1998–2003 nu-l are.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Criteriile comisiei medicale a CNATDCU din 1999 (între ele, cel
+puțin 20 de lucrări în reviste de vârf, din care 10 ca prim autor)</td>
+<td>Cotidianul, 28 ianuarie 2008</td>
+<td>Nimic.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Proiectul „Sistemul de evaluare privind ocuparea
+posturilor/acordarea titlurilor de profesor universitar”, anexă la un
+ordin fără număr, pus în dezbatere publică în iunie 2004</td>
+<td>Găsit acum, pe Web Archive</td>
+<td><strong>Găsit.</strong> Pagina CNATDCU de pe site-ul ministerului,
+arhivată pe 22 iunie 2004, îl listează ca „document in dezbatere
+publica”, alături de proiectele pentru doctorat, conferențiar,
+cercetător științific gradul I și II, conducător de doctorat și
+instituție organizatoare de doctorat. Fișierul pentru profesor e arhivat
+pe 26 iunie 2004.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Proiectul de la rândul 9 e din 2004, dar de dinainte de OM 4.823.
+Pagina CNATDCU de pe site-ul ministerului s-a schimbat în decembrie
+2004, când proiectele au fost înlocuite cu ordinele adoptate (OM
+4.821–4.828 din 30.09.2004). Din proiectele din iunie, numai două sunt
+arhivate în forma din iunie: cel pentru profesor și cel pentru
+conferențiar. Conferențiarul nu e în research design; fișierul lui stă
+în dosar, nefolosit.</p>
+<p>Fișierele găsite, în dosarul proiectului
+<code>explorari/standarde_ante_2004/surse/</code>:</p>
+<ul>
+<li>OM 4.836/1998, captura din 2.10.1999: <a
+href="https://web.archive.org/web/19991002201050/http://www.edu.ro:80/om4836.htm">web.archive.org/web/19991002201050/http://www.edu.ro:80/om4836.htm</a>;</li>
+<li>proiectul pentru profesor, captura din 26.06.2004: <a
+href="https://web.archive.org/web/20040626115622/http://www.edu.ro:80/download/critun2.pdf">web.archive.org/web/20040626115622/http://www.edu.ro:80/download/critun2.pdf</a>;</li>
+<li>proiectul pentru conferențiar, captura din 18.06.2004: <a
+href="https://web.archive.org/web/20040618185655/http://www.edu.ro:80/download/critun1.pdf">web.archive.org/web/20040618185655/http://www.edu.ro:80/download/critun1.pdf</a>;</li>
+<li>pagina CNATDCU de pe site-ul ministerului, captura din 22.06.2004:
+<a
+href="https://web.archive.org/web/20040622094545/http://www.edu.ro:80/cnatdcu.htm">web.archive.org/web/20040622094545/http://www.edu.ro:80/cnatdcu.htm</a>.</li>
+</ul>
+<h3
+id="om-s1-ordinele-dinainte-de-2004-din-lista-arcanum-care-nu-privesc-criteriile-en">Ordinele
+dinainte de 2004 din lista Arcanum, care nu privesc criteriile</h3>
+<p>Lista ordinelor pomenite în presă are cinci ordine dinainte de 2004.
+Relevanța e cea dată la citirea articolelor; pe Web Archive nu le-am
+căutat.</p>
+<div class="tablebox"><table class="small">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Ordinul</th>
+<th>Ce scrie articolul</th>
+<th>Relevanța</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11.053/10.11.1991</td>
+<td>art. 3 alin. 2, fără obiectul ordinului</td>
+<td>nerelevant</td>
+</tr>
+<tr>
+<td>7.179/1992</td>
+<td>ordin al ministrului învățământului</td>
+<td>nehotărât</td>
+</tr>
+<tr>
+<td>4.355/1993</td>
+<td>noua structură a anului universitar</td>
+<td>nehotărât</td>
+</tr>
+<tr>
+<td>3.300/2002</td>
+<td>comisiile Consiliului Național de Atestare</td>
+<td>nerelevant</td>
+</tr>
+<tr>
+<td>4.848/30.10.2002</td>
+<td>conferirea calității de conducător de doctorat</td>
+<td>nehotărât</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="om-s1-unde-s-a-căutat-pe-web-archive-en">Unde s-a căutat pe Web
+Archive</h3>
+<ul>
+<li><strong>Site-ul ministerului (edu.ro), 1998–2004.</strong> Indexul
+întreg, aproximativ 80.000 de adrese; capturile încep în februarie 1998,
+iar cele mai multe sunt din 2002–2004. Am căutat după numele adreselor
+(criterii, titluri, CNATDCU, concurs, ordin, profesor) și am deschis
+paginile și fișierele potrivite. Toate cele 528 de pagini de ordine și
+note din 1998–2003 sunt citite după titlu, iar cinci dintre ele, despre
+universități și posturi, întregi.</li>
+<li><strong>Alte domenii ale ministerului.</strong> men.ro și mec.ro:
+practic nimic arhivat. cnatdcu.ro: nicio captură până în 2006.</li>
+<li><strong>Consiliile din jurul ministerului</strong> (cncsis.ro,
+cnfis.ro, cneaa.ro), 1996–2004: am căutat adresele cu nume despre
+criterii, concursuri, regulamente, ordine și titluri, 239 în total, și
+am citit paginile care puteau privi posturile. Niciuna nu are criterii
+pentru profesor. Regulamentul CNCSIS privește granturile de cercetare,
+ordinul din 1994 de pe site-ul CNFIS înființează CNFIS, iar standardele
+CNEAA privesc învățământul la distanță și cu frecvență redusă.</li>
+<li><strong>Site-urile universităților</strong>, 1996–2004: am căutat
+adresele cu aceleași nume pe site-urile a 24 de universități. La 15
+dintre ele serverul Web Archive a oprit interogarea de fiecare dată:
+unibuc.ro, ubbcluj.ro, uaic.ro, pub.ro, ase.ro, uvt.ro, tuiasi.ro,
+upt.ro, ucv.ro, unitbv.ro, ulbsibiu.ro, uoradea.ro, ugal.ro,
+univ-ovidius.ro, usamv.ro. Trei n-au nicio adresă potrivită: umf.ro,
+umfcd.ro, umftgm.ro. Celelalte șase (umfiasi.ro, umfcluj.ro, umft.ro,
+utcluj.ro, snspa.ro, utcb.ro) au adrese despre admitere, burse, doctorat
+și concursuri pentru elevi, niciuna despre posturile didactice. Lista de
+regulamente a Universității Tehnice din Cluj-Napoca din 2004 nu are un
+regulament pentru ocuparea posturilor.</li>
+</ul>
+
+</div>
+<div id="om-s2-en" hidden>
+<h2 id="om-s2-ordine-pre-2004-en">Ordine pre 2004</h2>
+<p>Textele găsite pe Web Archive, pe situl arhivat al ministerului
+(edu.ro), și actul identificat în ele.</p>
+<h3 id="om-s2-cu-text-găsit-en">Cu text găsit</h3>
+<div class="tablebox"><table class="small">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Actul</th>
+<th>Ce prevede</th>
+<th>Sursa</th>
+<th>În Zotero</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ordinul nr. 4.836 din 20.10.1998 „privind încurajarea tinerilor
+specialisti sa ocupe posturi didactice în universitatile din tara”</td>
+<td>Pune în aplicare OM 3.462/1998: accesul la posturile din ierarhia
+didactică nu mai depinde de vechime, ci numai de performanțe
+științifice, „stabilite conform practicii internationale”. Nu spune care
+sunt aceste performanțe.</td>
+<td><a
+href="https://web.archive.org/web/19991002201050/http://www.edu.ro:80/om4836.htm">Captura
+din 2.10.1999</a></td>
+<td>Nu încă: rămâne la hotărârea autorului cum intră un act care nu e pe
+Portal și cum se citează o captură Web Archive.</td>
+</tr>
+<tr>
+<td>Proiectul „Sistem de evaluare privind ocuparea posturilor /
+acordarea titlurilor de profesor universitar”, anexă la un ordin fără
+număr, în dezbatere publică în iunie 2004</td>
+<td>Condițiile preliminare, criteriile de evaluare și dosarul de concurs
+pentru profesor, înainte de OM 4.823/2004.</td>
+<td><a
+href="https://web.archive.org/web/20040626115622/http://www.edu.ro:80/download/critun2.pdf">Fișierul,
+captura din 26.06.2004</a>; <a
+href="https://web.archive.org/web/20040622094545/http://www.edu.ro:80/cnatdcu.htm">pagina
+CNATDCU care îl listează, captura din 22.06.2004</a></td>
+<td>Da, în BO_ISI › legislation, cu PDF-ul și adresa capturii.</td>
+</tr>
+<tr>
+<td>Proiectul „Sistem de evaluare privind ocuparea posturilor /
+acordarea titlurilor de conferențiar universitar”, anexă la un ordin
+fără număr, în dezbatere publică în iunie 2004</td>
+<td>Condițiile preliminare, criteriile de evaluare și dosarul de concurs
+pentru conferențiar, înainte de OM 4.822/2004.</td>
+<td><a
+href="https://web.archive.org/web/20040618185655/http://www.edu.ro:80/download/critun1.pdf">Fișierul,
+captura din 18.06.2004</a></td>
+<td>Da, în BO_ISI › legislation, cu PDF-ul și adresa capturii.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="om-s2-identificat-fără-text-en">Identificat, fără text</h3>
+<div class="tablebox"><table class="small">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Actul</th>
+<th>Ce prevede, după OM 4.836/1998</th>
+<th>Unde s-a căutat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ordinul nr. 3.462 din 23 martie 1998</td>
+<td>Angajarea tinerilor specialiști pe posturile din universități se
+face pe baza performanței științifice, fără criteriul vechimii.</td>
+<td>Portalul Legislativ și situl ministerului arhivat: nu e pe
+niciunul.</td>
+</tr>
+</tbody>
+</table></div>
+<p>OM 3.462/1998 e numai identificat în textul altui ordin. Nu se poate
+confirma din aceste date că există, cu numărul și data scrise.</p>
+<h3 id="om-s2-denumirile-consiliului-de-atestare-en">Denumirile consiliului
+de atestare</h3>
+<p>Căutate pe Portalul Legislativ, în textul actelor semnate până în
+2004, și în titlurile ordinelor de după. După 1989 consiliul a avut trei
+denumiri.</p>
+<div class="tablebox"><table class="small">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Perioada</th>
+<th>Denumirea</th>
+<th>Actele în care apare</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1990–1992</td>
+<td>Comisia superioară de atestare</td>
+<td>HG 428/1990 și HG 299/1992: validează propunerile senatelor pentru
+gradul de profesor consultant.</td>
+</tr>
+<tr>
+<td>1995–2024</td>
+<td>Consiliul Național de Atestare a Titlurilor, Diplomelor și
+Certificatelor Universitare</td>
+<td>Legea învățământului nr. 84/1995, în forma publicată: confirmă
+titlurile de conferențiar și de profesor universitar. Apoi Legea
+128/1997 și hotărârile despre doctorat din 1996 și 1999.</td>
+</tr>
+<tr>
+<td>din 2024</td>
+<td>Comisia Națională de Atestare a Titlurilor, Diplomelor și
+Certificatelor Universitare (CNATDCU)</td>
+<td>Titlurile ordinelor, de la OM 5.760 din 8 august 2024.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Înainte de 1989, consiliul se numea Comisia superioară de diplome.
+Apare din Decretul nr. 15/1950 pentru organizarea doctoratului.
+Hotărârea Consiliului de Miniștri nr. 2.064/1969 o organiza, iar HG
+474/1999 a declarat-o abrogată.</p>
+<p>Nu se poate stabili din aceste date când s-a trecut de la comisie la
+consiliu, între iunie 1992 și iulie 1995. Nu se poate stabili nici ce
+act a înființat comisia din 1990, nici ce regulament a avut consiliul
+înainte de OM 4.821/2004. Actele acestea nu sunt pe Portal. HG 458/1994
+numește consiliul, dar Portalul o are numai în forma republicată în
+1996.</p>
+<p>În Zotero, BO_ISI › legislation: HG 428/1990, HG 299/1992, HG
+458/1994 în forma republicată în 1996, Legea 84/1995 în forma publicată
+și HG 474/1999.</p>
+
+</div>
+<div id="om-s3-en" hidden>
+<h2 id="om-s3-toate-ordinele-din-document-en">Toate ordinele din
+document</h2>
+<p>Ordinele de ministru pomenite în celelalte două taburi, în ordinea
+datei. Coloana a doua spune ce știm despre fiecare și de unde.</p>
+<div class="tablebox"><table class="small">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Ordinul</th>
+<th>Ce știm despre el</th>
+<th>Textul</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11.053 din 10.11.1991</td>
+<td>Pomenit în presă (Arcanum), cu art. 3 alin. 2, fără obiectul
+ordinului. Nerelevant la citirea articolului.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>6.042 din 24.08.1992</td>
+<td>Din presă: lăsa Comisiei Superioare de Atestare numai dosarele fără
+unanimitate în comisia de concurs sau fără două treimi în consiliu și
+senat. Suspendat la sfârșitul lui 1992.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>7.179/1992</td>
+<td>Din presă: ordin al ministrului învățământului, fără obiect.
+Nehotărât.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>4.355/1993</td>
+<td>Din presă: noua structură a anului universitar. Nehotărât.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>5.723/1994</td>
+<td>Concursurile pentru conferențiar și profesor. Abrogat de OM
+4.822/2004; după presă, nepublicat în Monitorul Oficial.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>Ordinul din 1995 al ministrului Liviu Maior, fără număr</td>
+<td>Din presă.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>3.462 din 23.03.1998</td>
+<td>Identificat în textul OM 4.836/1998: angajarea tinerilor specialiști
+pe posturile din universități se face pe baza performanței științifice,
+fără criteriul vechimii.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>4.836 din 20.10.1998</td>
+<td>Încurajarea tinerilor specialiști să ocupe posturi didactice în
+universități. Pune în aplicare OM 3.462/1998.</td>
+<td>Pe Web Archive, captura din 2.10.1999; în Zotero, nu încă</td>
+</tr>
+<tr>
+<td>Ordinul sau proiectul de ordin din 1999 al ministrului Andrei Marga,
+fără număr</td>
+<td>Din presă: trimis deputaților în aprilie 2004 drept criteriile după
+care judeca CNATDCU.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>3.300/2002</td>
+<td>Din presă: comisiile Consiliului Național de Atestare.
+Nerelevant.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>4.848 din 30.10.2002</td>
+<td>Din presă: conferirea calității de conducător de doctorat.
+Nehotărât.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>5.723/2003</td>
+<td>Planurile-cadru pentru liceu. Are același număr ca ordinul din
+1994.</td>
+<td>Pe situl ministerului arhivat</td>
+</tr>
+<tr>
+<td>Ordin fără număr, iunie 2004: proiectul pentru profesor</td>
+<td>Anexa, Sistemul de evaluare pentru profesor universitar, în
+dezbatere publică.</td>
+<td>Pe Web Archive; în Zotero</td>
+</tr>
+<tr>
+<td>Ordin fără număr, iunie 2004: proiectul pentru conferențiar</td>
+<td>Anexa, Sistemul de evaluare pentru conferențiar universitar, în
+dezbatere publică.</td>
+<td>Pe Web Archive; în Zotero</td>
+</tr>
+<tr>
+<td>4.821 din 30.09.2004</td>
+<td>Regulamentul de organizare și funcționare a CNATDCU.</td>
+<td>Pe Portal</td>
+</tr>
+<tr>
+<td>4.822 din 30.09.2004</td>
+<td>Sistemul de evaluare pentru conferențiar universitar. Abrogă OM
+5.723/1994.</td>
+<td>Pe Portal</td>
+</tr>
+<tr>
+<td>4.823 din 30.09.2004</td>
+<td>Sistemul de evaluare pentru profesor universitar. Primul act din
+corpus.</td>
+<td>Pe Portal</td>
+</tr>
+<tr>
+<td>4.824 din 30.09.2004</td>
+<td>Sistemul de evaluare pentru cercetător științific gradul II.</td>
+<td>Pe Portal</td>
+</tr>
+<tr>
+<td>4.825 din 30.09.2004</td>
+<td>Sistemul de evaluare pentru cercetător științific gradul I.</td>
+<td>Pe Portal</td>
+</tr>
+<tr>
+<td>4.826–4.828/2004</td>
+<td>Pomenite în document în șirul OM 4.821–4.828 din 30.09.2004. Căutate
+după număr, nu apar pe Portal, deci obiectul lor nu e verificat.</td>
+<td>Negăsit</td>
+</tr>
+<tr>
+<td>4.014 din 14.03.2024</td>
+<td>Modifică componența nominală a Consiliului Național de Atestare
+pentru mandatul 2020–2024. E ultimul ordin cu „Consiliul” în titlu.</td>
+<td>Pe Portal</td>
+</tr>
+<tr>
+<td>5.760 din 08.08.2024</td>
+<td>Regulamentul de organizare și funcționare a Comisiei Naționale de
+Atestare (CNATDCU). E primul ordin cu „Comisia” în titlu.</td>
+<td>Pe Portal</td>
+</tr>
+</tbody>
+</table></div>
+
+</div>
 </section>
 
 <section role="tabpanel" id="p-ref-en" aria-labelledby="t-ref-en" hidden>
