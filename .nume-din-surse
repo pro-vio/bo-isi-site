@@ -1,0 +1,4 @@
+# Nume întregi din surse publicate (presă, literatură de specialitate) care apar pe pagină și pe rânduri fără linkul
+# sursei. Numele din ziare și din literatura de specialitate se pot publica, indicând sursa (autorul, 25 noiembrie 2026).
+# Le citește poarta de push (verifica_inainte_de_push.py); fiecare apariție se arată la fiecare rulare.
+Liviu Maior  # ministrul învățământului numit în presa citită pe Arcanum (Curierul Național, 16 aprilie 2004), în tabul cu ordinele dinainte de 2004
